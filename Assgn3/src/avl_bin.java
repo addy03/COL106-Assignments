@@ -10,9 +10,8 @@ public class avl_bin
     public node_bin Search(int s)
     {
         // Time complexity is O(h);
-        // Returns the node with value that was searched or returns the leaf node if the value was not found;
         node_bin x = root;
-        while (x.left != null || x.right != null)
+        while (x != null)
         {
             if(x.get_id() == s)
             {
@@ -27,12 +26,46 @@ public class avl_bin
                 x = x.right;
             }
         }
-
         return x;
     }
 
-    public void node_rotate(node_bin x)
+    public void node_rotate(node_bin x, int id)
     {
+        node_bin par = x.parent;
+        node_bin y,z,t1,t2,t3,t4;
+        if(x.left.height > x.right.height)
+        {
+
+            y = x.left;
+            t1 = x.right;
+        }
+        else
+        {
+            y = x.right;
+            t1 = x.left;
+        }
+
+        if(y.left.height > y.right.height)
+        {
+            z = y.left;
+            t2 = y.right;
+        }
+        else
+        {
+            z = y.right;
+            t2 = y.left;
+        }
+
+        t3 = z.left;
+        t4 = z.right;
+
+        if(y == x.left)
+        {
+            if(z == y.left)
+            {
+
+            }
+        }
 
     }
 
@@ -40,10 +73,23 @@ public class avl_bin
     {
         //For AVL Tree;
         // Time complexity is O(h);
-        // New node is always added to the leaf node;
-        node_bin x = Search(id);
+        // New node is always added in place of leaf node;
+        node_bin y, x = null;
+        y = root;
+        while (y != null)
+        {
+            x = y;
+            if(id > y.id_b)
+            {
+                y = y.right;
+            }
+            else
+            {
+                y = y.left;
+            }
+        }
 
-        if(x.get_id() == id)
+        if(x.id_b == id)
         {
             System.out.println("Number already exists.");
         }
@@ -59,18 +105,18 @@ public class avl_bin
             {
                 x.left = a;
             }
-        }
 
-        x.height += 1;
-        while(x == root)
-        {
-            x = x.parent;
-            int max = x.left.height;
-            if (x.right.height > x.left.height)
+            x.height += 1;
+            while(x == root)
             {
-                max = x.right.height;
+                x = x.parent;
+                int max = x.left.height;
+                if (x.right.height > x.left.height)
+                {
+                    max = x.right.height;
+                }
+                x.height = max + 1;
             }
-            x.height = max + 1;
         }
     }
 
