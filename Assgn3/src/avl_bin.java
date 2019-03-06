@@ -171,6 +171,11 @@ public class avl_bin
                         x.parent.right = z;
                     }
                 }
+                else
+                {
+                    root = z;
+                }
+
                 if(t3 != null)
                 {
                     t3.parent = y;
@@ -189,6 +194,8 @@ public class avl_bin
                 update_height(y, t2, t3);
                 update_height(x, t4, t1);
                 update_height(z, x, y);
+
+                System.out.println(x.id_b + " " + y.id_b + " " + z.id_b);
             }
         }
         else
