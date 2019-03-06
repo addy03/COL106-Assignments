@@ -68,7 +68,6 @@ public class avl_bin
         {
             if(x.left.height > x.right.height)
             {
-
                 y = x.left;
                 t1 = x.right;
             }
@@ -126,37 +125,32 @@ public class avl_bin
         {
             if(z == y.left)
             {
-                if(par.left == x)
+                if (par != null)
                 {
-                    par.left = y;
+                    if(par.left == x)
+                    {
+                        par.left = y;
+                    }
+                    else
+                    {
+                        par.right = y;
+                    }
                 }
                 else
                 {
-                    par.right = y;
+                    root = y;
                 }
                 y.parent = par;
-                t2.parent = x;
+                if(t2 != null)
+                {
+                    t2.parent = x;
+                }
                 x.left = t2;
                 x.parent = y;
                 y.right = x;
 
-                if(t1.height >= t2.height)
-                {
-                    x.height = t1.height + 1;
-                }
-                else
-                {
-                    x.height = t2.height + 1;
-                }
-
-                if(x.height >= z.height)
-                {
-                    y.height = x.height + 1;
-                }
-                else
-                {
-                    y.height = z.height + 1;
-                }
+                update_height(x, t1, t2);
+                update_height(y, x, z);
             }
             else
             {
@@ -194,89 +188,75 @@ public class avl_bin
                 update_height(y, t2, t3);
                 update_height(x, t4, t1);
                 update_height(z, x, y);
-
-                System.out.println(x.id_b + " " + y.id_b + " " + z.id_b);
             }
         }
         else
         {
             if(z == x.right)
             {
-                if(par.left == x)
+                if (par != null)
                 {
-                    par.left = y;
+                    if(par.left == x)
+                    {
+                        par.left = y;
+                    }
+                    else
+                    {
+                        par.right = y;
+                    }
                 }
                 else
                 {
-                    par.right = y;
+                    root = y;
                 }
+
                 y.parent = par;
-                t2.parent = x;
+                if(t2 != null)
+                {
+                    t2.parent = x;
+                }
                 x.right = t2;
                 x.parent = y;
                 y.left = x;
 
-                if(t1.height >= t2.height)
-                {
-                    x.height = t1.height + 1;
-                }
-                else
-                {
-                    x.height = t2.height + 1;
-                }
+                update_height(x, t1, t2);
+                update_height(y, z, x);
 
-                if(x.height >= z.height)
-                {
-                    y.height = x.height + 1;
-                }
-                else
-                {
-                    y.height = z.height + 1;
-                }
             }
             else
             {
-                if(par.left == x)
+                if (par != null)
                 {
-                    par.left = z;
+                    if(par.left == x)
+                    {
+                        par.left = z;
+                    }
+                    else
+                    {
+                        par.right = z;
+                    }
                 }
                 else
                 {
-                    par.right = z;
+                    root = z;
                 }
-                t4.parent = y;
+
+                if(t4 != null)
+                {
+                    t4.parent = y;
+                }
                 y.left = t4;
                 x.right = t3;
-                t3.parent = x;
+                if(t3 != null)
+                {
+                    t3.parent = x;
+                }
                 z.left = x;
                 z.right = y;
 
-                if(t4.height >= t2.height)
-                {
-                    y.height = t4.height + 1;
-                }
-                else
-                {
-                    y.height = t2.height + 1;
-                }
-
-                if(t3.height >= t1.height)
-                {
-                    x.height = t3.height + 1;
-                }
-                else
-                {
-                    x.height = t1.height + 1;
-                }
-
-                if(x.height >= y.height)
-                {
-                    z.height = x.height + 1;
-                }
-                else
-                {
-                    z.height = y.height + 1;
-                }
+                update_height(y, t4, t2);
+                update_height(x, t3, t1);
+                update_height(z, x, y);
             }
         }
 
