@@ -31,31 +31,63 @@ public class avl_bin
         return x;
     }
 
-    public void node_rotate(node_bin x, int id)
+    public void node_rotate(node_bin x)
     {
         node_bin par = x.parent;
         node_bin y,z,t1,t2,t3,t4;
-        if(x.left.height > x.right.height)
+        if(x.left != null && x.right != null)
         {
+            if(x.left.height > x.right.height)
+            {
 
-            y = x.left;
-            t1 = x.right;
+                y = x.left;
+                t1 = x.right;
+            }
+            else
+            {
+                y = x.right;
+                t1 = x.left;
+            }
         }
         else
         {
-            y = x.right;
-            t1 = x.left;
+            if(x.left == null)
+            {
+                y = x.right;
+                t1 = null;
+            }
+            else
+            {
+                y = x.left;
+                t1 = null;
+            }
         }
 
-        if(y.left.height > y.right.height)
+        if(y.left != null && y.right != null)
         {
-            z = y.left;
-            t2 = y.right;
+            if(y.left.height > y.right.height)
+            {
+                z = y.left;
+                t2 = y.right;
+            }
+            else
+            {
+                z = y.right;
+                t2 = y.left;
+            }
         }
         else
         {
-            z = y.right;
-            t2 = y.left;
+            if(y.left == null)
+            {
+                z = y.right;
+                t2 = null;
+            }
+            else
+            {
+                z = y.left;
+                t2 = null;
+            }
         }
 
         t3 = z.left;
@@ -289,9 +321,9 @@ public class avl_bin
                 }
             }
 
+            System.out.println(x.id_b + " " + x.height);
             while(x != root)
             {
-
                 x = x.parent;
 
                 if (x.left != null && x.right != null)
@@ -314,34 +346,43 @@ public class avl_bin
                         x.height = x.left.height + 1;
                     }
                 }
+
+                System.out.println(x.id_b + " " + x.height);
             }
 
             node_bin rot = a;
+            System.out.println(rot.id_b + " " + rot.height);
             int diff = 0;
-            while(diff < 2 && rot != null)
+            while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
             {
-                if (x.left != null && x.right != null)
+                rot = rot.parent;
+                if(rot != null)
                 {
-                    diff = Math.abs(x.right.height - x.left.height);
-                }
-                else
-                {
-                    if(x.left == null)
+                    if (rot.left != null && rot.right != null)
                     {
-                        diff = x.right.height;
+                        diff = Math.abs(rot.right.height - rot.left.height);
                     }
                     else
                     {
-                        diff = x.left.height;
+                        if(rot.left == null)
+                        {
+                            diff = rot.right.height + 1;
+                        }
+                        else
+                        {
+                            diff = rot.left.height + 1;
+                        }
                     }
                 }
-                rot = rot.parent;
+                System.out.println(diff);
             }
 
             if(rot != null)
             {
-                node_rotate(rot, id);
+                System.out.println(rot.id_b + " " + rot.height);
+                node_rotate(rot);
             }
+            System.out.println();
         }
     }
 
