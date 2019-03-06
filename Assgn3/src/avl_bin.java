@@ -63,6 +63,15 @@ public class avl_bin
         {
             if(z == y.left)
             {
+                t2.parent = x;
+                x.left = t2;
+
+            }
+        }
+        else
+        {
+            if(z == x.right)
+            {
 
             }
         }
@@ -79,6 +88,10 @@ public class avl_bin
         while (y != null)
         {
             x = y;
+            if(y.id_b == id)
+            {
+                break;
+            }
             if(id > y.id_b)
             {
                 y = y.right;
@@ -97,7 +110,7 @@ public class avl_bin
         {
             node_bin a = new node_bin(id, cap,0);
             a.parent = x;
-            if(x.get_id() < id)
+            if(x.id_b < id)
             {
                 x.right = a;
             }
@@ -107,15 +120,31 @@ public class avl_bin
             }
 
             x.height += 1;
-            while(x == root)
+            while(x != root)
             {
+
                 x = x.parent;
-                int max = x.left.height;
-                if (x.right.height > x.left.height)
+
+                if (x.left != null && x.right != null)
                 {
-                    max = x.right.height;
+                    int max = x.left.height;
+                    if (x.right.height > x.left.height)
+                    {
+                        max = x.right.height;
+                    }
+                    x.height = max + 1;
                 }
-                x.height = max + 1;
+                else
+                {
+                    if(x.left == null)
+                    {
+                        x.height = x.right.height + 1;
+                    }
+                    else
+                    {
+                        x.height = x.left.height + 1;
+                    }
+                }
             }
         }
     }
@@ -169,4 +198,17 @@ public class avl_bin
         }
     }
 
+    public void InorderTraversal(node_bin x)
+    {
+        if(x == null)
+        {
+
+        }
+        else
+        {
+            InorderTraversal(x.left);
+            System.out.println(x.id_b + "  " + x.height);
+            InorderTraversal(x.right);
+        }
+    }
 }
