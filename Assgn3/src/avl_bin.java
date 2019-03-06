@@ -181,6 +181,7 @@ public class avl_bin
                 }
                 y.right = t3;
                 x.left = t4;
+                x.parent = z;
                 y.parent = z;
                 z.left = y;
                 z.right = x;

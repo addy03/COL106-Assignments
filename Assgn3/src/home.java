@@ -10,5 +10,7 @@ public class home
 //        code.AddNode(4,3);
 
         code.InorderTraversal(code.root);
+
+        System.out.println(code.root.right.parent.id_b);
     }
 }
