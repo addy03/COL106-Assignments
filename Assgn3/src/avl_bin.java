@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class avl_bin
 {
     node_bin root;
@@ -63,16 +65,163 @@ public class avl_bin
         {
             if(z == y.left)
             {
+                if(par.left == x)
+                {
+                    par.left = y;
+                }
+                else
+                {
+                    par.right = y;
+                }
+                y.parent = par;
                 t2.parent = x;
                 x.left = t2;
+                x.parent = y;
+                y.right = x;
 
+                if(t1.height >= t2.height)
+                {
+                    x.height = t1.height + 1;
+                }
+                else
+                {
+                    x.height = t2.height + 1;
+                }
+
+                if(x.height >= z.height)
+                {
+                    y.height = x.height + 1;
+                }
+                else
+                {
+                    y.height = z.height + 1;
+                }
+            }
+            else
+            {
+                if(par.left == x)
+                {
+                    par.left = z;
+                }
+                else
+                {
+                    par.right = z;
+                }
+                t3.parent = y;
+                y.right = t3;
+                t4.parent = x;
+                x.left = t4;
+                y.parent = z;
+                z.left = y;
+                z.right = x;
+
+                if(t2.height >= t3.height)
+                {
+                    y.height = t2.height + 1;
+                }
+                else
+                {
+                    y.height = t3.height + 1;
+                }
+
+                if(t4.height >= t1.height)
+                {
+                    x.height = t4.height + 1;
+                }
+                else
+                {
+                    x.height = t1.height + 1;
+                }
+
+                if(x.height >= y.height)
+                {
+                    z.height = x.height + 1;
+                }
+                else
+                {
+                    z.height = y.height + 1;
+                }
             }
         }
         else
         {
             if(z == x.right)
             {
+                if(par.left == x)
+                {
+                    par.left = y;
+                }
+                else
+                {
+                    par.right = y;
+                }
+                y.parent = par;
+                t2.parent = x;
+                x.right = t2;
+                x.parent = y;
+                y.left = x;
 
+                if(t1.height >= t2.height)
+                {
+                    x.height = t1.height + 1;
+                }
+                else
+                {
+                    x.height = t2.height + 1;
+                }
+
+                if(x.height >= z.height)
+                {
+                    y.height = x.height + 1;
+                }
+                else
+                {
+                    y.height = z.height + 1;
+                }
+            }
+            else
+            {
+                if(par.left == x)
+                {
+                    par.left = z;
+                }
+                else
+                {
+                    par.right = z;
+                }
+                t4.parent = y;
+                y.left = t4;
+                x.right = t3;
+                t3.parent = x;
+                z.left = x;
+                z.right = y;
+
+                if(t4.height >= t2.height)
+                {
+                    y.height = t4.height + 1;
+                }
+                else
+                {
+                    y.height = t2.height + 1;
+                }
+
+                if(t3.height >= t1.height)
+                {
+                    x.height = t3.height + 1;
+                }
+                else
+                {
+                    x.height = t1.height + 1;
+                }
+
+                if(x.height >= y.height)
+                {
+                    z.height = x.height + 1;
+                }
+                else
+                {
+                    z.height = y.height + 1;
+                }
             }
         }
 
@@ -119,7 +268,27 @@ public class avl_bin
                 x.left = a;
             }
 
-            x.height += 1;
+            if (x.left != null && x.right != null)
+            {
+                int max = x.left.height;
+                if (x.right.height > x.left.height)
+                {
+                    max = x.right.height;
+                }
+                x.height = max + 1;
+            }
+            else
+            {
+                if(x.left == null)
+                {
+                    x.height = x.right.height + 1;
+                }
+                else
+                {
+                    x.height = x.left.height + 1;
+                }
+            }
+
             while(x != root)
             {
 
@@ -145,6 +314,33 @@ public class avl_bin
                         x.height = x.left.height + 1;
                     }
                 }
+            }
+
+            node_bin rot = a;
+            int diff = 0;
+            while(diff < 2 && rot != null)
+            {
+                if (x.left != null && x.right != null)
+                {
+                    diff = Math.abs(x.right.height - x.left.height);
+                }
+                else
+                {
+                    if(x.left == null)
+                    {
+                        diff = x.right.height;
+                    }
+                    else
+                    {
+                        diff = x.left.height;
+                    }
+                }
+                rot = rot.parent;
+            }
+
+            if(rot != null)
+            {
+                node_rotate(rot, id);
             }
         }
     }
