@@ -31,6 +31,35 @@ public class avl_bin
         return x;
     }
 
+    public void update_height(node_bin mid, node_bin l, node_bin r)
+    {
+        mid.height = 0;
+        if(l != null && r != null)
+        {
+            if(l.height >= r.height)
+            {
+                mid.height = l.height + 1;
+            }
+            else
+            {
+                mid.height = r.height + 1;
+            }
+        }
+        else if(!(l == null && r == null))
+        {
+            if(l == null)
+            {
+                mid.height = r.height + 1;
+            }
+            if(r == null)
+            {
+                mid.height = l.height + 1;
+            }
+
+        }
+
+    }
+
     public void node_rotate(node_bin x)
     {
         node_bin par = x.parent;
@@ -131,48 +160,35 @@ public class avl_bin
             }
             else
             {
-                if(par.left == x)
+                if(x.parent != null)
                 {
-                    par.left = z;
+                    if(x.parent.left == x)
+                    {
+                        x.parent.left = z;
+                    }
+                    else
+                    {
+                        x.parent.right = z;
+                    }
                 }
-                else
+                if(t3 != null)
                 {
-                    par.right = z;
+                    t3.parent = y;
                 }
-                t3.parent = y;
+
+                if(t4 != null)
+                {
+                    t4.parent = x;
+                }
                 y.right = t3;
-                t4.parent = x;
                 x.left = t4;
                 y.parent = z;
                 z.left = y;
                 z.right = x;
 
-                if(t2.height >= t3.height)
-                {
-                    y.height = t2.height + 1;
-                }
-                else
-                {
-                    y.height = t3.height + 1;
-                }
-
-                if(t4.height >= t1.height)
-                {
-                    x.height = t4.height + 1;
-                }
-                else
-                {
-                    x.height = t1.height + 1;
-                }
-
-                if(x.height >= y.height)
-                {
-                    z.height = x.height + 1;
-                }
-                else
-                {
-                    z.height = y.height + 1;
-                }
+                update_height(y, t2, t3);
+                update_height(x, t4, t1);
+                update_height(z, x, y);
             }
         }
         else
@@ -444,7 +460,7 @@ public class avl_bin
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_b + "  " + x.height);
+            System.out.println(x.id_b + " " + x.height);
             InorderTraversal(x.right);
         }
     }
