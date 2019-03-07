@@ -438,56 +438,6 @@ public class avl_bin
         }
     }
 
-//    public node_bin DeleteNode(int s)
-//    {
-//        node_bin x = Search(s);
-//        if(x.left == null && x.right == null)
-//        {
-//            // If both children are null;
-//            if(x == x.parent.left)
-//            {
-//                x.parent.left = null;
-//            }
-//            else
-//            {
-//                x.parent.right = null;
-//            }
-//        }
-//        else if(x.left == null || x.right == null)
-//        {
-//            // If only one child is null;
-//            node_bin a;
-//            if(x.left == null)
-//            {
-//                a = x.right;
-//            }
-//            else
-//            {
-//                a = x.left;
-//            }
-//            if(x == x.parent.left)
-//            {
-//                x.parent.left = a;
-//            }
-//            else
-//            {
-//                x.parent.right = a;
-//            }
-//        }
-//        else
-//        {
-//            node_bin a = x.left;
-//            while (a != null)
-//            {
-//                a = a.right;
-//            }
-//            int val = a.id_b;
-//            DeleteNode(a.id_b);
-//            x.id_b = val;
-//        }
-//        return x;
-//    }
-
     public void InorderTraversal(node_bin x)
     {
         if(x == null)
