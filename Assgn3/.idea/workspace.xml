@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f86e6aa-0766-4e20-b58a-af16927eeccb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assgn3/BestFit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assgn3/BestFit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assgn3/avl_bin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assgn3/avl_bin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assgn3/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assgn3/home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assgn3/node_object.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assgn3/node_object.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/avl_obj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_obj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="214">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -25,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node_bin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -34,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_bin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="-6409">
               <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
             </state>
           </provider>
@@ -43,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="501" column="37" selection-start-line="501" selection-start-column="37" selection-end-line="501" selection-end-column="37" />
+            <state relative-caret-position="367">
+              <caret line="544" column="25" selection-start-line="544" selection-start-column="25" selection-end-line="544" selection-end-column="25" />
               <folding>
                 <element signature="e#92#93#0" expanded="true" />
                 <element signature="e#131#132#0" expanded="true" />
@@ -56,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_rem_bin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="499" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="499" selection-end-column="5" />
+            <state relative-caret-position="8313">
+              <caret line="489" column="21" lean-forward="true" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
               <folding>
                 <element signature="e#95#96#0" expanded="true" />
                 <element signature="e#131#132#0" expanded="true" />
@@ -97,6 +103,7 @@
     <findStrings>
       <find>node_bin</find>
       <find>id_b</find>
+      <find>cap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,12 +113,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/avl.java" />
-        <option value="$PROJECT_DIR$/src/node_bin.java" />
-        <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/avl_bin.java" />
         <option value="$PROJECT_DIR$/src/BestFit.java" />
         <option value="$PROJECT_DIR$/src/avl_rem_bin.java" />
         <option value="$PROJECT_DIR$/src/node_object.java" />
+        <option value="$PROJECT_DIR$/src/node_bin.java" />
+        <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/avl_obj.java" />
       </list>
     </option>
@@ -149,7 +156,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551940838205" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551945758898" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -204,8 +211,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30169973" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30169973" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -226,42 +233,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/avl.java" />
-    <entry file="file://$PROJECT_DIR$/src/home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BestFit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/avl_rem_bin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="499" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="499" selection-end-column="5" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#131#132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node_bin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/avl_bin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -272,10 +247,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/avl_bin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6409">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/avl_rem_bin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8313">
+          <caret line="489" column="21" lean-forward="true" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
+          <folding>
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#131#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node_bin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="501" column="37" selection-start-line="501" selection-start-column="37" selection-end-line="501" selection-end-column="37" />
+        <state relative-caret-position="367">
+          <caret line="544" column="25" selection-start-line="544" selection-start-column="25" selection-end-line="544" selection-end-column="25" />
           <folding>
             <element signature="e#92#93#0" expanded="true" />
             <element signature="e#131#132#0" expanded="true" />

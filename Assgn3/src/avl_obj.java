@@ -311,18 +311,18 @@ public class avl_obj
     }
 
     // Function to add a new node to the AVL tree.
-    public void AddNode(int id, int cap)
+    public void AddNode(int id, int obj_size)
     {
         node_object y, x = null;
         y = root;
         while (y != null)
         {
             x = y;
-            if(y.id_o == cap)
+            if(y.id_o == id)
             {
                 break;
             }
-            if(cap > y.id_o)
+            if(id > y.id_o)
             {
                 y = y.right;
             }
@@ -332,13 +332,13 @@ public class avl_obj
             }
         }
 
-        if(x.id_o == cap)
+        if(x.id_o == id)
         {
             System.out.println("Number already exists.");
         }
         else
         {
-            node_object a = new node_object(id, cap,0);
+            node_object a = new node_object(id, obj_size,0);
             a.parent = x;
             if(x.id_o < id)
             {
@@ -453,7 +453,7 @@ public class avl_obj
                     x.parent.right = null;
                 }
             }
-            else if(x.left == null || x.right == null)
+            else
             {
                 // If only one child is null;
                 node_object a;
@@ -474,13 +474,15 @@ public class avl_obj
                     x.parent.right = a;
                 }
             }
-            node_object rot = x.parent;
+            node_object rot = x;
             while(rot != null)
             {
-                update_height(rot, rot.left, rot.right);
+                rot = rot.parent;
+
                 int diff = 0;
                 if(rot != null)
                 {
+                    update_height(rot, rot.left, rot.right);
                     if (rot.left != null && rot.right != null)
                     {
                         diff = Math.abs(rot.right.height - rot.left.height);
@@ -506,7 +508,7 @@ public class avl_obj
         else
         {
             node_object a = x.left;
-            while (a != null)
+            while (a.right != null)
             {
                 a = a.right;
             }
@@ -516,16 +518,31 @@ public class avl_obj
             a.left = x.left;
             a.right = x.right;
             a.parent = x.parent;
+            a.height = x.height;
 
-            x.left.parent = a;
-            x.right.parent = a;
-            if(x.parent.left == x)
+            if (x.left != null)
             {
-                x.parent.left = a;
+                x.left.parent = a;
             }
-            else
+
+            if(x.right != null)
             {
-                x.parent.right = a;
+                x.right.parent = a;
+            }
+
+            if(x.parent != null)
+            {
+                if(x.parent.left == x)
+                {
+                    x.parent.left = a;
+                }
+                else
+                {
+                    x.parent.right = a;
+                }
+            }else
+            {
+                root = a;
             }
         }
         return x;
