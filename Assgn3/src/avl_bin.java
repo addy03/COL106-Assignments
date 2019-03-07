@@ -3,12 +3,13 @@ import java.lang.Math;
 public class avl_bin
 {
     node_bin root;
-
+    // Function to initialize the AVL tree for bin.
     public avl_bin(int id, int cap)
     {
         root = new node_bin(id, cap, 0);
     }
 
+    // Function to find a node by its ID.
     public node_bin Search(int s)
     {
         // Time complexity is O(h);
@@ -31,6 +32,7 @@ public class avl_bin
         return x;
     }
 
+    // Function to update the height of any node.
     public void update_height(node_bin mid, node_bin l, node_bin r)
     {
         mid.height = 0;
@@ -60,6 +62,7 @@ public class avl_bin
 
     }
 
+    // Function to rebalance the AVL tree.
     public void node_rotate(node_bin x)
     {
         node_bin par = x.parent;
@@ -125,6 +128,7 @@ public class avl_bin
         {
             if(z == y.left)
             {
+                //Defining for the parent
                 if (par != null)
                 {
                     if(par.left == x)
@@ -140,20 +144,30 @@ public class avl_bin
                 {
                     root = y;
                 }
+
+                //Updating for y
                 y.parent = par;
+                y.right = x;
+                y.left = z;
+
+                //Updating for z.
+                z.parent = y; // For z left and right are already correct.
+
+                //Updating for x.
+                x.left = t2; // For x right is already correct.
+                x.parent = y;
+
                 if(t2 != null)
                 {
                     t2.parent = x;
                 }
-                x.left = t2;
-                x.parent = y;
-                y.right = x;
 
                 update_height(x, t1, t2);
                 update_height(y, x, z);
             }
             else
             {
+                //Defining for the parent
                 if(x.parent != null)
                 {
                     if(x.parent.left == x)
@@ -170,6 +184,19 @@ public class avl_bin
                     root = z;
                 }
 
+                // Updating for z.
+                z.left = y;
+                z.right = x;
+                z.parent = par;
+
+                // Updating for x.
+                x.left = t4;
+                x.parent = z;
+
+                //Updating for y.
+                y.right = t3;
+                y.parent = z;
+
                 if(t3 != null)
                 {
                     t3.parent = y;
@@ -179,12 +206,6 @@ public class avl_bin
                 {
                     t4.parent = x;
                 }
-                y.right = t3;
-                x.left = t4;
-                x.parent = z;
-                y.parent = z;
-                z.left = y;
-                z.right = x;
 
                 update_height(y, t2, t3);
                 update_height(x, t4, t1);
@@ -193,6 +214,7 @@ public class avl_bin
         }
         else
         {
+            // Updating for parent
             if(z == x.right)
             {
                 if (par != null)
@@ -211,14 +233,22 @@ public class avl_bin
                     root = y;
                 }
 
+                // Updating for y.
                 y.parent = par;
+                y.left = x;
+                y.right = z;
+
+                // Updating for x.
+                x.right = t2;
+                x.parent = y;
+
+                // Updating for z.
+                z.parent = y;
+
                 if(t2 != null)
                 {
                     t2.parent = x;
                 }
-                x.right = t2;
-                x.parent = y;
-                y.left = x;
 
                 update_height(x, t1, t2);
                 update_height(y, z, x);
@@ -226,6 +256,7 @@ public class avl_bin
             }
             else
             {
+                // Updating for parent
                 if (par != null)
                 {
                     if(par.left == x)
@@ -242,19 +273,29 @@ public class avl_bin
                     root = z;
                 }
 
+                // Updating for z.
+                z.left = x;
+                z.right = y;
+                z.parent = par;
+
+                // Updating for x.
+                x.right = t3;
+                x.parent = z;
+
+                // Updating for y.
+                y.left = t4;
+                y.parent = z;
+
                 if(t4 != null)
                 {
                     t4.parent = y;
                 }
-                y.left = t4;
-                x.right = t3;
+
                 if(t3 != null)
                 {
                     t3.parent = x;
                 }
-                z.left = x;
-                z.right = y;
-
+                
                 update_height(y, t4, t2);
                 update_height(x, t3, t1);
                 update_height(z, x, y);
@@ -263,11 +304,9 @@ public class avl_bin
 
     }
 
+    // Function to add a new node to the AVL tree.
     public void AddNode(int id, int cap)
     {
-        //For AVL Tree;
-        // Time complexity is O(h);
-        // New node is always added in place of leaf node;
         node_bin y, x = null;
         y = root;
         while (y != null)
@@ -368,11 +407,11 @@ public class avl_bin
                     }
                     else
                     {
-                        if(rot.left == null)
+                        if(rot.left == null && rot.right != null)
                         {
                             diff = rot.right.height + 1;
                         }
-                        else
+                        else if(rot.left != null && rot.right == null)
                         {
                             diff = rot.left.height + 1;
                         }
