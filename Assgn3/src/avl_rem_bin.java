@@ -1,26 +1,23 @@
-import java.lang.Math;
-
-public class avl_bin
+public class avl_rem_bin
 {
     node_bin root;
-    // Function to initialize the AVL tree for bin.
-    public avl_bin(int id, int cap)
+
+    public avl_rem_bin(int id, int cap)
     {
         root = new node_bin(id, cap, 0);
     }
 
-    // Function to find a node by its ID.
     public node_bin Search(int s)
     {
         // Time complexity is O(h);
         node_bin x = root;
         while (x != null)
         {
-            if(x.get_id() == s)
+            if(x.rem_capacity == s)
             {
                 break;
             }
-            else if(x.get_id() > s)
+            else if(x.rem_capacity > s)
             {
                 x = x.left;
             }
@@ -321,11 +318,11 @@ public class avl_bin
         while (y != null)
         {
             x = y;
-            if(y.id_b == id)
+            if(y.rem_capacity == cap)
             {
                 break;
             }
-            if(id > y.id_b)
+            if(cap > y.rem_capacity)
             {
                 y = y.right;
             }
@@ -335,7 +332,7 @@ public class avl_bin
             }
         }
 
-        if(x.id_b == id)
+        if(x.rem_capacity == cap)
         {
             System.out.println("Number already exists.");
         }
