@@ -212,7 +212,7 @@ public class avl_obj
         else
         {
             // Updating for parent
-            if(z == x.right)
+            if(z == y.right)
             {
                 if (par != null)
                 {

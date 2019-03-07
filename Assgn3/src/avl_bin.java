@@ -215,7 +215,7 @@ public class avl_bin
         else
         {
             // Updating for parent
-            if(z == x.right)
+            if(z == y.right)
             {
                 if (par != null)
                 {
@@ -373,7 +373,6 @@ public class avl_bin
                 }
             }
 
-            System.out.println(x.id_b + " " + x.height);
             while(x != root)
             {
                 x = x.parent;
@@ -398,12 +397,9 @@ public class avl_bin
                         x.height = x.left.height + 1;
                     }
                 }
-
-                System.out.println(x.id_b + " " + x.height);
             }
 
             node_bin rot = a;
-            System.out.println(rot.id_b + " " + rot.height);
             int diff = 0;
             while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
             {
@@ -426,15 +422,12 @@ public class avl_bin
                         }
                     }
                 }
-                System.out.println(diff);
             }
 
             if(rot != null)
             {
-                System.out.println(rot.id_b + " " + rot.height);
                 node_rotate(rot);
             }
-            System.out.println();
         }
     }
 

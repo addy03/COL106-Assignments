@@ -212,7 +212,7 @@ public class avl_rem_bin
         else
         {
             // Updating for parent
-            if(z == x.right)
+            if(z == y.right)
             {
                 if (par != null)
                 {
