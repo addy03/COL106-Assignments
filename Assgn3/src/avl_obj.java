@@ -435,55 +435,101 @@ public class avl_obj
         }
     }
 
-//    public node_object DeleteNode(int s)
-//    {
-//        node_object x = Search(s);
-//        if(x.left == null && x.right == null)
-//        {
-//            // If both children are null;
-//            if(x == x.parent.left)
-//            {
-//                x.parent.left = null;
-//            }
-//            else
-//            {
-//                x.parent.right = null;
-//            }
-//        }
-//        else if(x.left == null || x.right == null)
-//        {
-//            // If only one child is null;
-//            node_object a;
-//            if(x.left == null)
-//            {
-//                a = x.right;
-//            }
-//            else
-//            {
-//                a = x.left;
-//            }
-//            if(x == x.parent.left)
-//            {
-//                x.parent.left = a;
-//            }
-//            else
-//            {
-//                x.parent.right = a;
-//            }
-//        }
-//        else
-//        {
-//            node_object a = x.left;
-//            while (a != null)
-//            {
-//                a = a.right;
-//            }
-//            int val = a.id_o;
-//            DeleteNode(a.id_o);
-//            x.id_o = val;
-//        }
-//        return x;
-//    }
+    public node_object DeleteNode(int id)
+    {
+        node_object x = Search(id);
+
+        if(!(x.left != null && x.right != null))
+        {
+            if(x.left == null && x.right == null)
+            {
+                // If both children are null;
+                if(x == x.parent.left)
+                {
+                    x.parent.left = null;
+                }
+                else
+                {
+                    x.parent.right = null;
+                }
+            }
+            else if(x.left == null || x.right == null)
+            {
+                // If only one child is null;
+                node_object a;
+                if(x.left == null)
+                {
+                    a = x.right;
+                }
+                else
+                {
+                    a = x.left;
+                }
+                if(x == x.parent.left)
+                {
+                    x.parent.left = a;
+                }
+                else
+                {
+                    x.parent.right = a;
+                }
+            }
+            node_object rot = x.parent;
+            while(rot != null)
+            {
+                update_height(rot, rot.left, rot.right);
+                int diff = 0;
+                if(rot != null)
+                {
+                    if (rot.left != null && rot.right != null)
+                    {
+                        diff = Math.abs(rot.right.height - rot.left.height);
+                    }
+                    else
+                    {
+                        if(rot.left == null && rot.right != null)
+                        {
+                            diff = rot.right.height + 1;
+                        }
+                        else if(rot.left != null && rot.right == null)
+                        {
+                            diff = rot.left.height + 1;
+                        }
+                    }
+                }
+                if(diff > 1)
+                {
+                    node_rotate(rot);
+                }
+            }
+        }
+        else
+        {
+            node_object a = x.left;
+            while (a != null)
+            {
+                a = a.right;
+            }
+            a = DeleteNode(a.id_o);
+
+            // Updating a.
+            a.left = x.left;
+            a.right = x.right;
+            a.parent = x.parent;
+
+            x.left.parent = a;
+            x.right.parent = a;
+            if(x.parent.left == x)
+            {
+                x.parent.left = a;
+            }
+            else
+            {
+                x.parent.right = a;
+            }
+        }
+        return x;
+    }
 
     public void InorderTraversal(node_object x)
     {
