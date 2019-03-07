@@ -29,7 +29,7 @@ public class BestFit
 
         if(max.rem_capacity >= s)
         {
-
+            
         }else
         {
             System.out.println("Not enough space");
@@ -40,10 +40,13 @@ public class BestFit
     {
         try
         {
+            // Update object AVL
             node_object x = obj.DeleteNode(id);
             int p = x.par_bin_id;
+            // Update bin AVL
             node_bin p_bin = bin.Search(p);
             p_bin.rem_capacity += x.size_o;
+            // Update rem_cap AVL
             node_bin p_rem_bin = rem.Search(p);
             node_bin del = rem.DeleteNode(p_rem_bin);
             del.rem_capacity += x.size_o;
