@@ -370,7 +370,6 @@ public class avl_obj
                 }
             }
 
-            System.out.println(x.id_o + " " + x.height);
             while(x != root)
             {
                 x = x.parent;
@@ -395,12 +394,9 @@ public class avl_obj
                         x.height = x.left.height + 1;
                     }
                 }
-
-                System.out.println(x.id_o + " " + x.height);
             }
 
             node_object rot = a;
-            System.out.println(rot.id_o + " " + rot.height);
             int diff = 0;
             while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
             {
@@ -423,129 +419,132 @@ public class avl_obj
                         }
                     }
                 }
-                System.out.println(diff);
             }
 
             if(rot != null)
             {
-                System.out.println(rot.id_o + " " + rot.height);
                 node_rotate(rot);
             }
-            System.out.println();
         }
     }
 
-    public node_object DeleteNode(int id)
+    public node_object DeleteNode(int id) throws NullPointerException
     {
         node_object x = Search(id);
-
-        if(!(x.left != null && x.right != null))
+        try
         {
-            if(x.left == null && x.right == null)
+            if(!(x.left != null && x.right != null))
             {
-                // If both children are null;
-                if(x == x.parent.left)
+                if(x.left == null && x.right == null)
                 {
-                    x.parent.left = null;
+                    // If both children are null;
+                    if(x == x.parent.left)
+                    {
+                        x.parent.left = null;
+                    }
+                    else
+                    {
+                        x.parent.right = null;
+                    }
                 }
                 else
                 {
-                    x.parent.right = null;
+                    // If only one child is null;
+                    node_object a;
+                    if(x.left == null)
+                    {
+                        a = x.right;
+                    }
+                    else
+                    {
+                        a = x.left;
+                    }
+                    if(x == x.parent.left)
+                    {
+                        x.parent.left = a;
+                    }
+                    else
+                    {
+                        x.parent.right = a;
+                    }
+                }
+                node_object rot = x;
+                while(rot != null)
+                {
+                    rot = rot.parent;
+
+                    int diff = 0;
+                    if(rot != null)
+                    {
+                        update_height(rot, rot.left, rot.right);
+                        if (rot.left != null && rot.right != null)
+                        {
+                            diff = Math.abs(rot.right.height - rot.left.height);
+                        }
+                        else
+                        {
+                            if(rot.left == null && rot.right != null)
+                            {
+                                diff = rot.right.height + 1;
+                            }
+                            else if(rot.left != null && rot.right == null)
+                            {
+                                diff = rot.left.height + 1;
+                            }
+                        }
+                    }
+                    if(diff > 1)
+                    {
+                        node_rotate(rot);
+                    }
                 }
             }
             else
             {
-                // If only one child is null;
-                node_object a;
-                if(x.left == null)
+                node_object a = x.left;
+                while (a.right != null)
                 {
-                    a = x.right;
+                    a = a.right;
                 }
-                else
-                {
-                    a = x.left;
-                }
-                if(x == x.parent.left)
-                {
-                    x.parent.left = a;
-                }
-                else
-                {
-                    x.parent.right = a;
-                }
-            }
-            node_object rot = x;
-            while(rot != null)
-            {
-                rot = rot.parent;
+                a = DeleteNode(a.id_o);
 
-                int diff = 0;
-                if(rot != null)
+                // Updating a.
+                a.left = x.left;
+                a.right = x.right;
+                a.parent = x.parent;
+                a.height = x.height;
+
+                if (x.left != null)
                 {
-                    update_height(rot, rot.left, rot.right);
-                    if (rot.left != null && rot.right != null)
+                    x.left.parent = a;
+                }
+
+                if(x.right != null)
+                {
+                    x.right.parent = a;
+                }
+
+                if(x.parent != null)
+                {
+                    if(x.parent.left == x)
                     {
-                        diff = Math.abs(rot.right.height - rot.left.height);
+                        x.parent.left = a;
                     }
                     else
                     {
-                        if(rot.left == null && rot.right != null)
-                        {
-                            diff = rot.right.height + 1;
-                        }
-                        else if(rot.left != null && rot.right == null)
-                        {
-                            diff = rot.left.height + 1;
-                        }
+                        x.parent.right = a;
                     }
-                }
-                if(diff > 1)
+                }else
                 {
-                    node_rotate(rot);
+                    root = a;
                 }
             }
+            return x;
         }
-        else
+        catch(NullPointerException e)
         {
-            node_object a = x.left;
-            while (a.right != null)
-            {
-                a = a.right;
-            }
-            a = DeleteNode(a.id_o);
-
-            // Updating a.
-            a.left = x.left;
-            a.right = x.right;
-            a.parent = x.parent;
-            a.height = x.height;
-
-            if (x.left != null)
-            {
-                x.left.parent = a;
-            }
-
-            if(x.right != null)
-            {
-                x.right.parent = a;
-            }
-
-            if(x.parent != null)
-            {
-                if(x.parent.left == x)
-                {
-                    x.parent.left = a;
-                }
-                else
-                {
-                    x.parent.right = a;
-                }
-            }else
-            {
-                root = a;
-            }
+            throw new NullPointerException();
         }
-        return x;
     }
 
     public void InorderTraversal(node_object x)
