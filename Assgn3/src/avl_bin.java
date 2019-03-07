@@ -295,10 +295,19 @@ public class avl_bin
                 {
                     t3.parent = x;
                 }
-                
+
                 update_height(y, t4, t2);
                 update_height(x, t3, t1);
                 update_height(z, x, y);
+            }
+        }
+
+        if (par != null)
+        {
+            while(par != null)
+            {
+                update_height(par, par.left, par.right);
+                par = par.parent;
             }
         }
 

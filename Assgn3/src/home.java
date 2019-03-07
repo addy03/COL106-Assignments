@@ -6,7 +6,7 @@ public class home
         code.AddNode(1,5);
         code.AddNode(2,3);
         code.AddNode(10,3);
-//        code.AddNode(9,3);
+        code.AddNode(9,3);
 //        code.AddNode(4,3);
         code.InorderTraversal(code.root);
     }
