@@ -15,14 +15,18 @@ public class BestFit
     {
         if(bin == null && rem == null)
         {
-            bin = new avl_bin(id, c);
             rem = new avl_rem_bin(id, c);
+            bin = new avl_bin(id, c);
         }
         else
         {
+            if(bin.Search(id) == null)
+            {
+                node_bin x = new node_bin(id,c, 0);
+                rem.AddNode(x);
+            }
             bin.AddNode(id, c);
-            node_bin x = new node_bin(id,c, 0);
-            rem.AddNode(x);
+
         }
     }
 
@@ -36,7 +40,15 @@ public class BestFit
 
         if(max.rem_capacity >= s)
         {
-            obj.AddNode(id, s);
+            if(obj == null)
+            {
+                obj = new avl_obj(id, s);
+            }
+            else
+            {
+                obj.AddNode(id, s);
+            }
+
             node_bin x = rem.DeleteNode(max);
             x.rem_capacity -= s;
             rem.AddNode(x);

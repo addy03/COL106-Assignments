@@ -538,7 +538,7 @@ public class avl_rem_bin
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_b + " " + x.height);
+            System.out.println(x.id_b + " " + x.height + " " + x.rem_capacity);
             InorderTraversal(x.right);
         }
     }

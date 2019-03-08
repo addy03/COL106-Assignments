@@ -40,6 +40,12 @@ public class home
         x.AddBin(1,10);
         x.AddBin(2,20);
         x.AddBin(3,10);
+        x.AddBin(5,4);
+        x.AddBin(13, 8);
+        x.AddBin(9, 40);
+        x.AddBin(11, 12);
+        x.AddBin(10, 20);
+        x.AddObject(5,30);
         x.bin.InorderTraversal(x.bin.root);
         System.out.println();
         x.rem.InorderTraversal(x.rem.root);
