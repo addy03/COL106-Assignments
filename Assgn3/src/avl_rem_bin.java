@@ -321,57 +321,36 @@ public class avl_rem_bin
     // Function to add a new bin node to the AVL tree.
     public void AddNode(node_bin a)
     {
+
         int cap = a.rem_capacity;
         node_bin y, x = null;
         y = root;
-        while (y != null)
+        if(root != null)
         {
-            x = y;
-
-            if(cap > y.rem_capacity)
+            //Finding the node where the new node will be added.
+            while (y != null)
             {
-                y = y.right;
+                x = y;
+
+                if(cap > y.rem_capacity)
+                {
+                    y = y.right;
+                }
+                else
+                {
+                    y = y.left;
+                }
+            }
+
+            a.parent = x;
+            if(x.rem_capacity < cap)
+            {
+                x.right = a;
             }
             else
             {
-                y = y.left;
+                x.left = a;
             }
-        }
-
-        a.parent = x;
-        if(x.rem_capacity < cap)
-        {
-            x.right = a;
-        }
-        else
-        {
-            x.left = a;
-        }
-
-        if (x.left != null && x.right != null)
-        {
-            int max = x.left.height;
-            if (x.right.height > x.left.height)
-            {
-                max = x.right.height;
-            }
-            x.height = max + 1;
-        }
-        else
-        {
-            if(x.left == null)
-            {
-                x.height = x.right.height + 1;
-            }
-            else
-            {
-                x.height = x.left.height + 1;
-            }
-        }
-
-        while(x != root)
-        {
-            x = x.parent;
 
             if (x.left != null && x.right != null)
             {
@@ -393,36 +372,66 @@ public class avl_rem_bin
                     x.height = x.left.height + 1;
                 }
             }
-        }
 
-        node_bin rot = a;
-        int diff = 0;
-        while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
-        {
-            rot = rot.parent;
-            if(rot != null)
+            while(x != root)
             {
-                if (rot.left != null && rot.right != null)
+                x = x.parent;
+
+                if (x.left != null && x.right != null)
                 {
-                    diff = Math.abs(rot.right.height - rot.left.height);
+                    int max = x.left.height;
+                    if (x.right.height > x.left.height)
+                    {
+                        max = x.right.height;
+                    }
+                    x.height = max + 1;
                 }
                 else
                 {
-                    if(rot.left == null && rot.right != null)
+                    if(x.left == null)
                     {
-                        diff = rot.right.height + 1;
+                        x.height = x.right.height + 1;
                     }
-                    else if(rot.left != null && rot.right == null)
+                    else
                     {
-                        diff = rot.left.height + 1;
+                        x.height = x.left.height + 1;
                     }
                 }
             }
-        }
 
-        if(rot != null)
+            node_bin rot = a;
+            int diff = 0;
+            while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
+            {
+                rot = rot.parent;
+                if(rot != null)
+                {
+                    if (rot.left != null && rot.right != null)
+                    {
+                        diff = Math.abs(rot.right.height - rot.left.height);
+                    }
+                    else
+                    {
+                        if(rot.left == null && rot.right != null)
+                        {
+                            diff = rot.right.height + 1;
+                        }
+                        else if(rot.left != null && rot.right == null)
+                        {
+                            diff = rot.left.height + 1;
+                        }
+                    }
+                }
+            }
+
+            if(rot != null)
+            {
+                node_rotate(rot);
+            }
+        }
+        else
         {
-            node_rotate(rot);
+            root = a;
         }
     }
 
@@ -433,13 +442,20 @@ public class avl_rem_bin
             if(x.left == null && x.right == null)
             {
                 // If both children are null;
-                if(x == x.parent.left)
+                if(x != root)
                 {
-                    x.parent.left = null;
+                    if(x == x.parent.left)
+                    {
+                        x.parent.left = null;
+                    }
+                    else
+                    {
+                        x.parent.right = null;
+                    }
                 }
                 else
                 {
-                    x.parent.right = null;
+                    root = null;
                 }
             }
             else
@@ -546,7 +562,33 @@ public class avl_rem_bin
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_b + " " + x.height + " " + x.rem_capacity);
+            System.out.print(x.id_b + " " + x + " " + x.height + " " + x.rem_capacity + "  ");
+            if(x.parent != null)
+            {
+                System.out.print(" " + x.parent.id_b + " " + x.parent);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.parent + "_____________");
+            }
+            if(x.left != null)
+            {
+                System.out.print(" " + x.left.id_b + " " + x.left);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.left + "_____________");
+            }
+            if(x.right != null)
+            {
+                System.out.print(" " + x.right.id_b + " " + x.right);
+            }
+            else
+            {
+                System.out.print("  "  + " " + x.right + "_____________");
+            }
+            System.out.println();
+
             InorderTraversal(x.right);
         }
     }

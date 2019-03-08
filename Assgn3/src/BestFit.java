@@ -21,11 +21,12 @@ public class BestFit
         else
         {
             node_bin x = new node_bin(id,c, 0);
+            node_bin x1 = new node_bin(id,c, 0);
             if(bin.Search(id) == null)
             {
                 rem.AddNode(x);
             }
-            bin.AddNode(x);
+            bin.AddNode(x1);
 
         }
     }
@@ -48,9 +49,19 @@ public class BestFit
             {
                 obj.AddNode(id, s, max);
             }
-
+//            System.out.println("__________________________________________");
+//            System.out.println(rem.root.id_b);
+//            rem.InorderTraversal(rem.root);
+//            System.out.println();
             node_bin x = rem.DeleteNode(max);
+//            System.out.println(rem.root.id_b);
+//            rem.InorderTraversal(rem.root);
+//            System.out.println();
             x.rem_capacity -= s;
+            x.left = null;
+            x.right = null;
+            x.parent = null;
+            x.height = 0;
             rem.AddNode(x);
             node_bin x2 = bin.Search(x.id_b);
             x2.rem_capacity -= s;                                       // How to print error here!!

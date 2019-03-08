@@ -447,8 +447,35 @@ public class avl_bin
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_b + " " + x.height + " " + x.rem_capacity);
+            System.out.print(x.id_b + " " + x + " " + x.height + " " + x.rem_capacity + "  ");
+            if(x.parent != null)
+            {
+                System.out.print(" " + x.parent.id_b + " " + x.parent);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.parent + "_____________");
+            }
+            if(x.left != null)
+            {
+                System.out.print(" " + x.left.id_b + " " + x.left);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.left + "_____________");
+            }
+            if(x.right != null)
+            {
+                System.out.print(" " + x.right.id_b + " " + x.right);
+            }
+            else
+            {
+                System.out.print("  "  + " " + x.right + "_____________");
+            }
+            System.out.println();
+
             InorderTraversal(x.right);
         }
     }
+
 }

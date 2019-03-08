@@ -37,20 +37,32 @@ public class home
 //        code.InorderTraversal(code.root);
 
         BestFit x = new BestFit();
-        x.AddBin(1,10);
-        x.AddBin(2,20);
-        x.AddBin(3,10);
-        x.AddBin(5,4);
-        x.AddBin(13, 8);
+//        x.AddBin(15,10);
+//        x.AddBin(7,10);
+//        x.AddBin(3,10);
+//        x.AddBin(1,10);
+//        x.AddBin(17, 8);
+//        x.AddBin(2,80);
+//        x.AddBin(7,12);
+//        x.AddBin(11,14);
+//        x.AddBin(1,12);
+//        x.AddBin(18,10);
+
+
         x.AddBin(9, 40);
-        x.AddBin(11, 12);
-        x.AddBin(10, 20);
+        x.AddBin(11, 10);
+        x.AddBin(10, 10);
         x.AddObject(5,30);
+        x.AddObject(6,10);
+        x.AddBin(15,0);
+        x.AddObject(4,10);
+        x.AddObject(8,8);
+//        System.out.println(x.rem.root.right.right.id_b);
 //        x.DeleteObject(5);
         x.bin.InorderTraversal(x.bin.root);
         System.out.println();
         x.rem.InorderTraversal(x.rem.root);
-        System.out.println();
-        x.obj.InorderTraversal(x.obj.root);
+//        System.out.println();
+//        x.obj.InorderTraversal(x.obj.root);
     }
 }
