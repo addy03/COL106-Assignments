@@ -36,5 +36,12 @@ public class home
 
 //        code.InorderTraversal(code.root);
 
+        BestFit x = new BestFit();
+        x.AddBin(1,10);
+        x.AddBin(2,20);
+        x.AddBin(3,10);
+        x.bin.InorderTraversal(x.bin.root);
+        System.out.println();
+        x.rem.InorderTraversal(x.rem.root);
     }
 }

@@ -1,12 +1,19 @@
 public class BestFit
 {
-    avl_bin bin = null;
-    avl_rem_bin rem= null;
-    avl_obj obj = null;
+    avl_bin bin;
+    avl_rem_bin rem;
+    avl_obj obj;
+
+    public BestFit()
+    {
+        bin = null;
+        rem = null;
+        obj = null;
+    }
 
     public void AddBin(int id, int c)
     {
-        if(bin == null)
+        if(bin == null && rem == null)
         {
             bin = new avl_bin(id, c);
             rem = new avl_rem_bin(id, c);
@@ -19,7 +26,7 @@ public class BestFit
         }
     }
 
-    public int AddObject(int id,int s)
+    public int AddObject(int id,int s)                     // Check for this.
     {
         node_bin max = rem.root;
         while(max.right != null)
@@ -29,11 +36,18 @@ public class BestFit
 
         if(max.rem_capacity >= s)
         {
-            
+            obj.AddNode(id, s);
+            node_bin x = rem.DeleteNode(max);
+            x.rem_capacity -= s;
+            rem.AddNode(x);
+            node_bin x2 = bin.Search(x.id_b);
+            x2.rem_capacity -= s;                                       // How to print error here!!
         }else
         {
             System.out.println("Not enough space");
         }
+
+        return max.id_b;
     }
 
     public void DeleteObject(int id)
