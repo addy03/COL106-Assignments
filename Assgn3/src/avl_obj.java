@@ -469,6 +469,7 @@ public class avl_obj
                     {
                         a = x.left;
                     }
+                    a.parent = x.parent;
                     if(x == x.parent.left)
                     {
                         x.parent.left = a;

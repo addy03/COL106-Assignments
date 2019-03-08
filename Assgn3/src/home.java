@@ -52,11 +52,12 @@ public class home
         x.AddBin(9, 40);
         x.AddBin(11, 10);
         x.AddBin(10, 10);
-        x.AddObject(5,30);
-        x.AddObject(6,10);
-        x.AddBin(15,0);
-        x.AddObject(4,10);
-        x.AddObject(8,8);
+        x.AddBin(15,12);
+        x.AddBin(17,13);
+        x.AddBin(23,10);
+        x.AddObject(5,35);
+        x.AddObject(6,13);
+//        x.AddObject(10,12);
 //        System.out.println(x.rem.root.right.right.id_b);
 //        x.DeleteObject(5);
         x.bin.InorderTraversal(x.bin.root);
