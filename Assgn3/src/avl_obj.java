@@ -434,8 +434,8 @@ public class avl_obj
     {
         node_object x = Search(id);
         System.out.println(x.id_o);
-        try
-        {
+//        try
+//        {
             if(!(x.left != null && x.right != null))
             {
                 if(x.left == null && x.right == null)
@@ -470,13 +470,21 @@ public class avl_obj
                         a = x.left;
                     }
                     a.parent = x.parent;
-                    if(x == x.parent.left)
+
+                    if(x != root)
                     {
-                        x.parent.left = a;
+                        if(x == x.parent.left)
+                        {
+                            x.parent.left = a;
+                        }
+                        else
+                        {
+                            x.parent.right = a;
+                        }
                     }
                     else
                     {
-                        x.parent.right = a;
+                        root = a;
                     }
                 }
                 node_object rot = x;
@@ -551,11 +559,11 @@ public class avl_obj
                 }
             }
             return x;
-        }
-        catch(NullPointerException e)
-        {
-            throw new NullPointerException();
-        }
+//        }
+//        catch(NullPointerException e)
+//        {
+//            throw new NullPointerException();
+//        }
     }
 
     public void InorderTraversal(node_object x)

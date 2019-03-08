@@ -471,13 +471,20 @@ public class avl_rem_bin
                     a = x.left;
                 }
                 a.parent = x.parent;
-                if(x == x.parent.left)
+                if(x != root)
                 {
-                    x.parent.left = a;
+                    if(x == x.parent.left)
+                    {
+                        x.parent.left = a;
+                    }
+                    else
+                    {
+                        x.parent.right = a;
+                    }
                 }
                 else
                 {
-                    x.parent.right = a;
+                    root = a;
                 }
             }
             node_bin rot = x;

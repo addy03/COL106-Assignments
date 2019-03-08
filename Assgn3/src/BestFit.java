@@ -75,8 +75,8 @@ public class BestFit
 
     public void DeleteObject(int id)
     {
-        try
-        {
+//        try
+//        {
             //Update object AVL
             node_object x = obj.DeleteNode(id);
             int p = x.par_bin_id;
@@ -96,11 +96,11 @@ public class BestFit
             del.right = null;
             del.height = 0;
             rem.AddNode(del);
-        }
-        catch(NullPointerException e)
-        {
-            System.out.println("Object not found");
-        }
+//        }
+//        catch(NullPointerException e)
+//        {
+//            System.out.println("Object not found");
+//        }
     }
 
     public void PrintBin(int id)
