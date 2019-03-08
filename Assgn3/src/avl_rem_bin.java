@@ -7,10 +7,10 @@ public class avl_rem_bin
         root = new node_bin(id, cap, 0);
     }
 
-    public node_bin Search(int s)
+    public node_bin Search(int s, int id, node_bin start)
     {
         // Time complexity is O(h);
-        node_bin x = root;
+        node_bin x = start;
         while (x != null)
         {
             if(x.rem_capacity == s)
@@ -24,6 +24,14 @@ public class avl_rem_bin
             else
             {
                 x = x.right;
+            }
+        }
+
+        if(x != null)
+        {
+            while (x.id_b != id && x != null)
+            {
+                x = Search(s, id, x);
             }
         }
         return x;

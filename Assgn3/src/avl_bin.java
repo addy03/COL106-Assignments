@@ -10,9 +10,11 @@ public class avl_bin
     }
 
     // Function to find a node by its ID.
-    public node_bin Search(int s)
+    public node_bin Search(int s)      // s is the ID of the node being searched.
     {
         // Time complexity is O(h);
+        // Returns null if node is not found;
+
         node_bin x = root;
         while (x != null)
         {
@@ -33,39 +35,46 @@ public class avl_bin
     }
 
     // Function to update the height of any node.
-    public void update_height(node_bin mid, node_bin l, node_bin r)
+    // If mid node is null, returns NullPointerException.
+    public void update_height(node_bin mid, node_bin l, node_bin r) throws NullPointerException
     {
-        mid.height = 0;
-        if(l != null && r != null)
+        try
         {
-            if(l.height >= r.height)
+            mid.height = 0;
+            if(l != null && r != null)
             {
-                mid.height = l.height + 1;
+                if(l.height >= r.height)
+                {
+                    mid.height = l.height + 1;
+                }
+                else
+                {
+                    mid.height = r.height + 1;
+                }
             }
-            else
+            else if(!(l == null && r == null))
             {
-                mid.height = r.height + 1;
+                if(l == null)
+                {
+                    mid.height = r.height + 1;
+                }
+                if(r == null)
+                {
+                    mid.height = l.height + 1;
+                }
             }
         }
-        else if(!(l == null && r == null))
+        catch (NullPointerException e)
         {
-            if(l == null)
-            {
-                mid.height = r.height + 1;
-            }
-            if(r == null)
-            {
-                mid.height = l.height + 1;
-            }
-
+            throw new NullPointerException();
         }
-
     }
 
     // Function to rebalance the AVL tree.
     public void node_rotate(node_bin x)
     {
-        node_bin par = x.parent;
+        // x, y, z are never null.
+        node_bin par = x.parent;  // par == null if x is root.
         node_bin y,z,t1,t2,t3,t4;
         if(x.left != null && x.right != null)
         {
@@ -302,30 +311,28 @@ public class avl_bin
             }
         }
 
-        if (par != null)
+        while(par != null)
         {
-            while(par != null)
-            {
-                update_height(par, par.left, par.right);
-                par = par.parent;
-            }
+            update_height(par, par.left, par.right);
+            par = par.parent;
         }
 
     }
 
     // Function to add a new node to the AVL tree.
-    public void AddNode(int id, int cap)
+    public void AddNode(node_bin a)
     {
+        // First we find the node to which the new node will be added.
         node_bin y, x = null;
         y = root;
         while (y != null)
         {
             x = y;
-            if(y.id_b == id)
+            if(y.id_b == a.id_b)
             {
                 break;
             }
-            if(id > y.id_b)
+            if(a.id_b > y.id_b)
             {
                 y = y.right;
             }
@@ -335,15 +342,15 @@ public class avl_bin
             }
         }
 
-        if(x.id_b == id)
+        if(x.id_b == a.id_b)
         {
             System.out.println("Number already exists.");
         }
         else
         {
-            node_bin a = new node_bin(id, cap,0);
+            // x is  not null.
             a.parent = x;
-            if(x.id_b < id)
+            if(x.id_b < a.id_b)
             {
                 x.right = a;
             }
@@ -440,7 +447,7 @@ public class avl_bin
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_b + " " + x.height);
+            System.out.println(x.id_b + " " + x.height + " " + x.rem_capacity);
             InorderTraversal(x.right);
         }
     }

@@ -2,9 +2,10 @@ public class avl_obj
 {
     node_object root;
 
-    public avl_obj(int id, int size)
+    public avl_obj(int id, int size, node_bin par)
     {
         root = new node_object(id, size, 0);
+        root.par_bin_id = par.id_b;
     }
 
     public node_object Search(int s)
@@ -311,7 +312,7 @@ public class avl_obj
     }
 
     // Function to add a new node to the AVL tree.
-    public void AddNode(int id, int obj_size)
+    public void AddNode(int id, int obj_size, node_bin par)
     {
         node_object y, x = null;
         y = root;
@@ -339,6 +340,7 @@ public class avl_obj
         else
         {
             node_object a = new node_object(id, obj_size,0);
+            a.par_bin_id = par.id_b;
             a.parent = x;
             if(x.id_o < id)
             {
@@ -431,6 +433,7 @@ public class avl_obj
     public node_object DeleteNode(int id) throws NullPointerException
     {
         node_object x = Search(id);
+        System.out.println(x.id_o);
         try
         {
             if(!(x.left != null && x.right != null))
@@ -438,13 +441,20 @@ public class avl_obj
                 if(x.left == null && x.right == null)
                 {
                     // If both children are null;
-                    if(x == x.parent.left)
+                    if(x != root)
                     {
-                        x.parent.left = null;
+                        if(x == x.parent.left)
+                        {
+                            x.parent.left = null;
+                        }
+                        else
+                        {
+                            x.parent.right = null;
+                        }
                     }
                     else
                     {
-                        x.parent.right = null;
+                        root = null;
                     }
                 }
                 else
@@ -556,7 +566,7 @@ public class avl_obj
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_o + " " + x.height);
+            System.out.println(x.id_o + " " + x.height + " " + x.size_o);
             InorderTraversal(x.right);
         }
     }
