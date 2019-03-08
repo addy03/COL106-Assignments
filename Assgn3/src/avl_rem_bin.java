@@ -31,7 +31,7 @@ public class avl_rem_bin
         {
             while (x.id_b != id && x != null)
             {
-                x = Search(s, id, x);
+                x = Search(s, id, x.left);
             }
         }
         return x;
