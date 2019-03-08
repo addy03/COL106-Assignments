@@ -21,6 +21,8 @@ public class home
 
         BestFit x = new BestFit();
         x.AddBin(20,20);
+        x.AddObject(20,10);
+        x.AddObject(15,12);
 //        x.AddBin(15,10);
 //        x.AddBin(7,10);
 //        x.AddBin(3,10);
@@ -48,7 +50,7 @@ public class home
         x.bin.InorderTraversal(x.bin.root);
         System.out.println();
         x.rem.InorderTraversal(x.rem.root);
-//        System.out.println();
-//        x.obj.InorderTraversal(x.obj.root);
+        System.out.println();
+        x.obj.InorderTraversal(x.obj.root);
     }
 }
