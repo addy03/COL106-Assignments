@@ -75,27 +75,32 @@ public class BestFit
 
     public void DeleteObject(int id)
     {
-//        try
-//        {
-            // Update object AVL
+        try
+        {
+            //Update object AVL
             node_object x = obj.DeleteNode(id);
-            System.out.println(x.id_o);
-            System.out.println();
             int p = x.par_bin_id;
-            // Update bin AVL
+            obj.InorderTraversal(obj.root);
+            System.out.println();
+            // Search the node in both bin trees
             node_bin p_bin = bin.Search(p);
-            System.out.println(p_bin.id_b);
-            // Update rem_cap AVL
             node_bin p_rem_bin = rem.Search(p_bin.rem_capacity, p_bin.id_b, rem.root);
-            System.out.println(p_bin.rem_capacity);
+            // Update bin AVL
+            p_bin.rem_capacity += x.size_o;
+            // Update rem_cap AVL
+//            System.out.println(p_bin.rem_capacity);
             node_bin del = rem.DeleteNode(p_rem_bin);
             del.rem_capacity += x.size_o;
+            del.parent = null;
+            del.left = null;
+            del.right = null;
+            del.height = 0;
             rem.AddNode(del);
-//        }
-////        catch(NullPointerException e)
-////        {
-////            System.out.println("Object not found");
-////        }
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Object not found");
+        }
     }
 
     public void PrintBin(int id)

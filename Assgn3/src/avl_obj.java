@@ -567,7 +567,33 @@ public class avl_obj
         else
         {
             InorderTraversal(x.left);
-            System.out.println(x.id_o + " " + x.height + " " + x.size_o);
+            System.out.print(x.id_o + " " + x + " " + x.height + " " + x.par_bin_id +" ");
+            if(x.parent != null)
+            {
+                System.out.print(" " + x.parent.id_o + " " + x.parent);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.parent + "_____________");
+            }
+            if(x.left != null)
+            {
+                System.out.print(" " + x.left.id_o + " " + x.left);
+            }
+            else
+            {
+                System.out.print("  " + " " + x.left + "_____________");
+            }
+            if(x.right != null)
+            {
+                System.out.print(" " + x.right.id_o + " " + x.right);
+            }
+            else
+            {
+                System.out.print("  "  + " " + x.right + "_____________");
+            }
+            System.out.println();
+
             InorderTraversal(x.right);
         }
     }

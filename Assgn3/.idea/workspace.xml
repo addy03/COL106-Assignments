@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f86e6aa-0766-4e20-b58a-af16927eeccb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/BestFit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/avl_obj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_obj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/avl_rem_bin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_rem_bin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_rem_bin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="524" column="30" lean-forward="true" selection-start-line="524" selection-start-column="30" selection-end-line="524" selection-end-column="30" />
+            <state relative-caret-position="442">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -67,17 +67,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="471" column="40" selection-start-line="471" selection-start-column="40" selection-end-line="471" selection-end-column="40" />
+            <state relative-caret-position="80">
+              <caret line="569" column="84" selection-start-line="569" selection-start-column="84" selection-end-line="569" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BestFit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+            <state relative-caret-position="165">
+              <caret line="86" column="86" lean-forward="true" selection-start-line="86" selection-start-column="86" selection-end-line="86" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -109,10 +109,10 @@
         <option value="$PROJECT_DIR$/src/node_bin.java" />
         <option value="$PROJECT_DIR$/src/node_object.java" />
         <option value="$PROJECT_DIR$/src/avl_bin.java" />
-        <option value="$PROJECT_DIR$/src/BestFit.java" />
-        <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/avl_rem_bin.java" />
         <option value="$PROJECT_DIR$/src/avl_obj.java" />
+        <option value="$PROJECT_DIR$/src/home.java" />
+        <option value="$PROJECT_DIR$/src/BestFit.java" />
       </list>
     </option>
   </component>
@@ -233,13 +233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BestFit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/avl_bin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -258,24 +251,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="471" column="40" selection-start-line="471" selection-start-column="40" selection-end-line="471" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/avl_rem_bin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="524" column="30" lean-forward="true" selection-start-line="524" selection-start-column="30" selection-end-line="524" selection-end-column="30" />
+        <state relative-caret-position="442">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="569" column="84" selection-start-line="569" selection-start-column="84" selection-end-line="569" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BestFit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="86" column="86" lean-forward="true" selection-start-line="86" selection-start-column="86" selection-end-line="86" selection-end-column="86" />
         </state>
       </provider>
     </entry>

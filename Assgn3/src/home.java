@@ -57,13 +57,14 @@ public class home
         x.AddBin(23,10);
         x.AddObject(5,35);
         x.AddObject(6,13);
-//        x.AddObject(10,12);
+        x.AddObject(10,12);
+        x.DeleteObject(10);
 //        System.out.println(x.rem.root.right.right.id_b);
 //        x.DeleteObject(5);
         x.bin.InorderTraversal(x.bin.root);
         System.out.println();
         x.rem.InorderTraversal(x.rem.root);
-//        System.out.println();
-//        x.obj.InorderTraversal(x.obj.root);
+        System.out.println();
+        x.obj.InorderTraversal(x.obj.root);
     }
 }
