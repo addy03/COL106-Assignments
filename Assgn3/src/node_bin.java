@@ -6,7 +6,7 @@ public class node_bin
     int capacity;
     int rem_capacity;
     int height;
-    List<node_object> objects = null;
+    List<Integer> objects = null;
     node_bin parent = null;
     node_bin left = null;
     node_bin right = null;
