@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class node_bin
@@ -6,7 +7,7 @@ public class node_bin
     int capacity;
     int rem_capacity;
     int height;
-    List<Integer> objects = null;
+    List<Integer> objects = new ArrayList<>();
     node_bin parent = null;
     node_bin left = null;
     node_bin right = null;

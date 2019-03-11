@@ -90,11 +90,11 @@ public class BestFit
             node_bin p_bin = bin.Search(p);
             node_bin p_rem_bin = rem.Search(p_bin.rem_capacity, p_bin.id_b, rem.root);
             // Update bin AVL
-            p_bin.objects.remove(id);
+//            p_bin.objects.remove(id);
             p_bin.rem_capacity += x.size_o;
             // Update rem_cap AVL
 //            System.out.println(p_bin.rem_capacity);
-            p_rem_bin.objects.remove(id);
+//            p_rem_bin.objects.remove(id);
             node_bin del = rem.DeleteNode(p_rem_bin);
             del.rem_capacity += x.size_o;
             del.parent = null;
