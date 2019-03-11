@@ -13,11 +13,11 @@ public class avl_rem_bin2
         node_bin2 x = root;
         while (x != null)
         {
-            if(x.key == s)
+            if(x.rem_capacity == s)
             {
                 break;
             }
-            else if(x.key > s)
+            else if(x.rem_capacity > s)
             {
                 x = x.left;
             }
@@ -317,15 +317,14 @@ public class avl_rem_bin2
         y = root;
         if(root != null)
         {
-            //Finding the node where the new node will be added.
             while (y != null)
             {
                 x = y;
-                if(cap == y.key)
+                if(y.rem_capacity == cap)
                 {
                     break;
                 }
-                if(cap > y.key)
+                if(cap > y.rem_capacity)
                 {
                     y = y.right;
                 }
@@ -335,11 +334,15 @@ public class avl_rem_bin2
                 }
             }
 
-            if(cap != x.key)
+            if(x.rem_capacity == cap)
+            {
+                x.id_bin.add(x.id_bin.size(), id);
+            }
+            else
             {
                 node_bin2 a = new node_bin2(cap, id);
                 a.parent = x;
-                if(x.key < cap)
+                if(x.rem_capacity < cap)
                 {
                     x.right = a;
                 }
@@ -425,11 +428,6 @@ public class avl_rem_bin2
                     node_rotate(rot);
                 }
             }
-            else
-            {
-                x.id_bin.add(x.no_id, id);
-                x.no_id += 1;
-            }
         }
         else
         {
@@ -437,21 +435,11 @@ public class avl_rem_bin2
         }
     }
 
-    public node_bin2 DeleteNode(int cap, int id)
+    public node_bin2 DeleteNode(int cap)
     {
         node_bin2 x = Search(cap);
-        int flag = 0;
 
-        for(int i=0; i<x.no_id; i++)
-        {
-            if(x.id_bin.get(i) == id)
-            {
-                flag = 1;
-                break;
-            }
-        }
-
-        if(flag == 1 && x.no_id == 1)
+        if(x.id_bin.size() == 1)
         {
             if(!(x.left != null && x.right != null))
             {
@@ -487,6 +475,7 @@ public class avl_rem_bin2
                         a = x.left;
                     }
                     a.parent = x.parent;
+
                     if(x != root)
                     {
                         if(x == x.parent.left)
@@ -541,7 +530,7 @@ public class avl_rem_bin2
                 {
                     a = a.right;
                 }
-                a = DeleteNode(a.key, a.id_bin.get(0));
+                a = DeleteNode(a.rem_capacity);
 
                 // Updating a.
                 a.left = x.left;
@@ -575,18 +564,6 @@ public class avl_rem_bin2
                 }
             }
         }
-        else
-        {
-            for(int i=0; i<x.no_id; i++)
-            {
-                if(x.id_bin.get(i) == id)
-                {
-                    x.id_bin.remove(i);
-                    break;
-                }
-            }
-        }
-
         return x;
     }
 
@@ -599,10 +576,10 @@ public class avl_rem_bin2
         else
         {
             InorderTraversal(x.left);
-            System.out.print(x.key + " " + x + " " + x.height + "  ");
+            System.out.print(x.rem_capacity + " " + x + " " + x.height + "  ");
             if(x.parent != null)
             {
-                System.out.print(" " + x.parent.key + " " + x.parent);
+                System.out.print(" " + x.parent.rem_capacity + " " + x.parent);
             }
             else
             {
@@ -610,7 +587,7 @@ public class avl_rem_bin2
             }
             if(x.left != null)
             {
-                System.out.print(" " + x.left.key + " " + x.left);
+                System.out.print(" " + x.left.rem_capacity + " " + x.left);
             }
             else
             {
@@ -618,7 +595,7 @@ public class avl_rem_bin2
             }
             if(x.right != null)
             {
-                System.out.print(" " + x.right.key + " " + x.right);
+                System.out.print(" " + x.right.rem_capacity + " " + x.right);
             }
             else
             {

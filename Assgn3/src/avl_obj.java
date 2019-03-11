@@ -433,7 +433,6 @@ public class avl_obj
     public node_object DeleteNode(int id) throws NullPointerException
     {
         node_object x = Search(id);
-        System.out.println(x.id_o);
 //        try
 //        {
             if(!(x.left != null && x.right != null))

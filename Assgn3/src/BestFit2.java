@@ -39,7 +39,8 @@ public class BestFit2
         }
 
         node_bin x1 = bin.Search(max.id_bin.get(0));
-        if(max.key >= s)
+
+        if(max.rem_capacity >= s)
         {
             if(obj == null)
             {
@@ -50,19 +51,11 @@ public class BestFit2
                 obj.AddNode(id, s, max);
             }
 
+            x1.objects.add(x1.objects.size(), id);
             x1.rem_capacity -= s;
-            x1.objects.add(id);
-//            System.out.println("__________________________________________");
-//            System.out.println(rem.root.id_b);
-//            rem.InorderTraversal(rem.root);
-//            System.out.println();
-            node_bin2 x = rem.DeleteNode(max.key, max.id_bin.get(0));
-//            System.out.println(rem.root.id_b);
-//            rem.InorderTraversal(rem.root);
-//            System.out.println();
 
-            rem.AddNode(x1.id_b, x1.rem_capacity);
-            // How to print error here!!
+            node_bin2 x = rem.DeleteNode();
+
         }else
         {
             System.out.println("Not enough space");
