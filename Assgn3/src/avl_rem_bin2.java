@@ -1,24 +1,23 @@
-public class avl_obj
+public class avl_rem_bin2
 {
-    node_object root;
+    node_bin2 root;
 
-    public avl_obj(int id, int size, node_bin2 par)
+    public avl_rem_bin2(int id, int cap)
     {
-        root = new node_object(id, size, 0);
-        root.par_bin_id = par.id_bin.get(0);
+        root = new node_bin2(cap, id);
     }
 
-    public node_object Search(int s)
+    public node_bin2 Search(int s)
     {
         // Time complexity is O(h);
-        node_object x = root;
+        node_bin2 x = root;
         while (x != null)
         {
-            if(x.id_o == s)
+            if(x.key == s)
             {
                 break;
             }
-            else if(x.id_o > s)
+            else if(x.key > s)
             {
                 x = x.left;
             }
@@ -31,7 +30,7 @@ public class avl_obj
     }
 
     // Function to update the height of any node.
-    public void update_height(node_object mid, node_object l, node_object r)
+    public void update_height(node_bin2 mid, node_bin2 l, node_bin2 r)
     {
         mid.height = 0;
         if(l != null && r != null)
@@ -61,10 +60,10 @@ public class avl_obj
     }
 
     // Function to rebalance the AVL tree.
-    public void node_rotate(node_object x)
+    public void node_rotate(node_bin2 x)
     {
-        node_object par = x.parent;
-        node_object y,z,t1,t2,t3,t4;
+        node_bin2 par = x.parent;
+        node_bin2 y,z,t1,t2,t3,t4;
         if(x.left != null && x.right != null)
         {
             if(x.left.height > x.right.height)
@@ -311,70 +310,43 @@ public class avl_obj
 
     }
 
-    // Function to add a new node to the AVL tree.
-    public void AddNode(int id, int obj_size, node_bin2 par)
+    // Function to add a new bin node to the AVL tree.
+    public void AddNode(int id, int cap)
     {
-        node_object y, x = null;
+        node_bin2 y, x = null;
         y = root;
-        while (y != null)
+        if(root != null)
         {
-            x = y;
-            if(y.id_o == id)
+            //Finding the node where the new node will be added.
+            while (y != null)
             {
-                break;
-            }
-            if(id > y.id_o)
-            {
-                y = y.right;
-            }
-            else
-            {
-                y = y.left;
-            }
-        }
-
-        if(x.id_o == id)
-        {
-            System.out.println("Number already exists.");
-        }
-        else
-        {
-            node_object a = new node_object(id, obj_size,0);
-            a.par_bin_id = par.id_bin.get(0);
-            a.parent = x;
-            if(x.id_o < id)
-            {
-                x.right = a;
-            }
-            else
-            {
-                x.left = a;
-            }
-
-            if (x.left != null && x.right != null)
-            {
-                int max = x.left.height;
-                if (x.right.height > x.left.height)
+                x = y;
+                if(cap == y.key)
                 {
-                    max = x.right.height;
+                    break;
                 }
-                x.height = max + 1;
-            }
-            else
-            {
-                if(x.left == null)
+                if(cap > y.key)
                 {
-                    x.height = x.right.height + 1;
+                    y = y.right;
                 }
                 else
                 {
-                    x.height = x.left.height + 1;
+                    y = y.left;
                 }
             }
 
-            while(x != root)
+            if(cap != x.key)
             {
-                x = x.parent;
+                node_bin2 a = new node_bin2(cap, id);
+                a.parent = x;
+                if(x.key < cap)
+                {
+                    x.right = a;
+                }
+                else
+                {
+                    x.left = a;
+                }
 
                 if (x.left != null && x.right != null)
                 {
@@ -396,46 +368,91 @@ public class avl_obj
                         x.height = x.left.height + 1;
                     }
                 }
-            }
 
-            node_object rot = a;
-            int diff = 0;
-            while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
-            {
-                rot = rot.parent;
-                if(rot != null)
+                while(x != root)
                 {
-                    if (rot.left != null && rot.right != null)
+                    x = x.parent;
+
+                    if (x.left != null && x.right != null)
                     {
-                        diff = Math.abs(rot.right.height - rot.left.height);
+                        int max = x.left.height;
+                        if (x.right.height > x.left.height)
+                        {
+                            max = x.right.height;
+                        }
+                        x.height = max + 1;
                     }
                     else
                     {
-                        if(rot.left == null && rot.right != null)
+                        if(x.left == null)
                         {
-                            diff = rot.right.height + 1;
+                            x.height = x.right.height + 1;
                         }
-                        else if(rot.left != null && rot.right == null)
+                        else
                         {
-                            diff = rot.left.height + 1;
+                            x.height = x.left.height + 1;
                         }
                     }
                 }
-            }
 
-            if(rot != null)
-            {
-                node_rotate(rot);
+                node_bin2 rot = a;
+                int diff = 0;
+                while(diff < 2 && rot != null) // Since height of the last node in any branch is 0 not 1;
+                {
+                    rot = rot.parent;
+                    if(rot != null)
+                    {
+                        if (rot.left != null && rot.right != null)
+                        {
+                            diff = Math.abs(rot.right.height - rot.left.height);
+                        }
+                        else
+                        {
+                            if(rot.left == null && rot.right != null)
+                            {
+                                diff = rot.right.height + 1;
+                            }
+                            else if(rot.left != null && rot.right == null)
+                            {
+                                diff = rot.left.height + 1;
+                            }
+                        }
+                    }
+                }
+
+                if(rot != null)
+                {
+                    node_rotate(rot);
+                }
             }
+            else
+            {
+                x.id_bin.add(x.no_id, id);
+                x.no_id += 1;
+            }
+        }
+        else
+        {
+            root = new node_bin2(cap, id);
         }
     }
 
-    public node_object DeleteNode(int id) throws NullPointerException
+    public node_bin2 DeleteNode(int cap, int id)
     {
-        node_object x = Search(id);
-        System.out.println(x.id_o);
-//        try
-//        {
+        node_bin2 x = Search(cap);
+        int flag = 0;
+
+        for(int i=0; i<x.no_id; i++)
+        {
+            if(x.id_bin.get(i) == id)
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if(flag == 1 && x.no_id == 1)
+        {
             if(!(x.left != null && x.right != null))
             {
                 if(x.left == null && x.right == null)
@@ -460,7 +477,7 @@ public class avl_obj
                 else
                 {
                     // If only one child is null;
-                    node_object a;
+                    node_bin2 a;
                     if(x.left == null)
                     {
                         a = x.right;
@@ -470,7 +487,6 @@ public class avl_obj
                         a = x.left;
                     }
                     a.parent = x.parent;
-
                     if(x != root)
                     {
                         if(x == x.parent.left)
@@ -487,7 +503,7 @@ public class avl_obj
                         root = a;
                     }
                 }
-                node_object rot = x;
+                node_bin2 rot = x;
                 while(rot != null)
                 {
                     rot = rot.parent;
@@ -520,12 +536,12 @@ public class avl_obj
             }
             else
             {
-                node_object a = x.left;
+                node_bin2 a = x.left;
                 while (a.right != null)
                 {
                     a = a.right;
                 }
-                a = DeleteNode(a.id_o);
+                a = DeleteNode(a.key, a.id_bin.get(0));
 
                 // Updating a.
                 a.left = x.left;
@@ -558,15 +574,23 @@ public class avl_obj
                     root = a;
                 }
             }
-            return x;
-//        }
-//        catch(NullPointerException e)
-//        {
-//            throw new NullPointerException();
-//        }
+        }
+        else
+        {
+            for(int i=0; i<x.no_id; i++)
+            {
+                if(x.id_bin.get(i) == id)
+                {
+                    x.id_bin.remove(i);
+                    break;
+                }
+            }
+        }
+
+        return x;
     }
 
-    public void InorderTraversal(node_object x)
+    public void InorderTraversal(node_bin2 x)
     {
         if(x == null)
         {
@@ -575,10 +599,10 @@ public class avl_obj
         else
         {
             InorderTraversal(x.left);
-            System.out.print(x.id_o + " " + x + " " + x.height + " " + x.par_bin_id +" ");
+            System.out.print(x.key + " " + x + " " + x.height + "  ");
             if(x.parent != null)
             {
-                System.out.print(" " + x.parent.id_o + " " + x.parent);
+                System.out.print(" " + x.parent.key + " " + x.parent);
             }
             else
             {
@@ -586,7 +610,7 @@ public class avl_obj
             }
             if(x.left != null)
             {
-                System.out.print(" " + x.left.id_o + " " + x.left);
+                System.out.print(" " + x.left.key + " " + x.left);
             }
             else
             {
@@ -594,7 +618,7 @@ public class avl_obj
             }
             if(x.right != null)
             {
-                System.out.print(" " + x.right.id_o + " " + x.right);
+                System.out.print(" " + x.right.key + " " + x.right);
             }
             else
             {

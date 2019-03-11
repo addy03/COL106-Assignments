@@ -1,10 +1,10 @@
-public class BestFit
+public class BestFit2
 {
     avl_bin bin;
-    avl_rem_bin rem;
+    avl_rem_bin2 rem;
     avl_obj obj;
 
-    public BestFit()
+    public BestFit2()
     {
         bin = null;
         rem = null;
@@ -15,31 +15,31 @@ public class BestFit
     {
         if(bin == null && rem == null)
         {
-            rem = new avl_rem_bin(id, c);
+            rem = new avl_rem_bin2(id, c);
             bin = new avl_bin(id, c);
         }
         else
         {
-            node_bin x = new node_bin(id,c, 0);
             node_bin x1 = new node_bin(id,c, 0);
             if(bin.Search(id) == null)
             {
-                rem.AddNode(x);
+                rem.AddNode(id, c);
             }
             bin.AddNode(x1);
 
         }
     }
 
-    public int AddObject(int id,int s)                     // Check for this.
+    public int AddObject(int id, int s)                     // Check for this.
     {
-        node_bin max = rem.root;
+        node_bin2 max = rem.root;
         while(max.right != null)
         {
             max = max.right;
         }
 
-        if(max.rem_capacity >= s)
+        node_bin x1 = bin.Search(max.id_bin.get(0));
+        if(max.key >= s)
         {
             if(obj == null)
             {
@@ -50,58 +50,64 @@ public class BestFit
                 obj.AddNode(id, s, max);
             }
 
-            max.objects.add(id); // Java 11 or 8
-            node_bin x1 = bin.Search(max.id_b);
+            x1.rem_capacity -= s;
             x1.objects.add(id);
 //            System.out.println("__________________________________________");
 //            System.out.println(rem.root.id_b);
 //            rem.InorderTraversal(rem.root);
 //            System.out.println();
-            node_bin x = rem.DeleteNode(max);
+            node_bin2 x = rem.DeleteNode(max.key, max.id_bin.get(0));
 //            System.out.println(rem.root.id_b);
 //            rem.InorderTraversal(rem.root);
 //            System.out.println();
-            x.rem_capacity -= s;
-            x.left = null;
-            x.right = null;
-            x.parent = null;
-            x.height = 0;
-            rem.AddNode(x);
-            node_bin x2 = bin.Search(x.id_b);
-            x2.rem_capacity -= s;                                       // How to print error here!!
+
+            rem.AddNode(x1.id_b, x1.rem_capacity);
+            // How to print error here!!
         }else
         {
             System.out.println("Not enough space");
         }
 
-        return max.id_b;
+        return x1.id_b;
     }
 
     public void DeleteObject(int id)
     {
 //        try
 //        {
-            //Update object AVL
-            node_object x = obj.DeleteNode(id);
-            int p = x.par_bin_id;
-            // Search the node in both bin trees
-            node_bin p_bin = bin.Search(p);
-            node_bin p_rem_bin = rem.Search(p_bin.rem_capacity, p_bin.id_b, rem.root);
-            System.out.println(p_bin.id_b + "  __________" + p_bin.rem_capacity);
-            System.out.println(p_rem_bin.id_b + "  __________");
-            // Update bin AVL
+        //Update object AVL
+        node_object x = obj.DeleteNode(id);
+        int p = x.par_bin_id;
+        // Search the node in both bin trees
+        node_bin p_bin = bin.Search(p);
+        node_bin2 p_rem_bin = rem.Search(p_bin.rem_capacity);
+        System.out.println(p_bin.id_b + "  __________" + p_bin.rem_capacity);
+//        System.out.println(p_rem_bin.id_b + "  __________");
+        node_bin2 del;
+        for(int i=0; i < p_rem_bin.id_bin.size(); i++)
+        {
+            if(p_rem_bin.id_bin.get(i) == p_bin.id_b)
+            {
+                del = rem.DeleteNode(p_rem_bin.key, p_bin.id_b);
+                break;
+            }
+        }
+
+        for(int i=0; i < p_bin.objects.size(); i++)
+        {
+            if(p_bin.objects.get(i) == id)
+            {
+                p_bin.objects.remove(i);
+                break;
+            }
+        }
+        // Update bin AVL
 //            p_bin.objects.remove(id);
-            p_bin.rem_capacity += x.size_o;
-            // Update rem_cap AVL
+        p_bin.rem_capacity += x.size_o;
+        // Update rem_cap AVL
 //            System.out.println(p_bin.rem_capacity);
 //            p_rem_bin.objects.remove(id);
-            node_bin del = rem.DeleteNode(p_rem_bin);
-            del.rem_capacity += x.size_o;
-            del.parent = null;
-            del.left = null;
-            del.right = null;
-            del.height = 0;
-            rem.AddNode(del);
+        rem.AddNode(p_bin.id_b, p_bin.rem_capacity);
 //        }
 //        catch(NullPointerException e)
 //        {

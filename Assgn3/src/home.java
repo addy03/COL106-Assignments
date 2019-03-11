@@ -6,10 +6,10 @@ public class home
 {
     public static void main(String args[])
     {
-        BestFit new_fit = new BestFit();
+        BestFit2 new_fit = new BestFit2();
         try
         {
-            Scanner input = new Scanner(new File("new_small.txt"));
+            Scanner input = new Scanner(new File("new_medium.txt"));
             String answer;
 
             while(input.hasNext())

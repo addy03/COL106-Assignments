@@ -11,13 +11,17 @@ public class avl_rem_bin
     {
         // Time complexity is O(h);
         node_bin x = start;
+        System.out.println("..............................");
         while (x != null)
         {
-            if(x.rem_capacity == s)
+
+            System.out.println(x.id_b);
+
+            if(x.id_b == id)
             {
                 break;
             }
-            else if(x.rem_capacity > s)
+            if(x.rem_capacity >= s)
             {
                 x = x.left;
             }
@@ -26,14 +30,16 @@ public class avl_rem_bin
                 x = x.right;
             }
         }
-
-        if(x != null)
-        {
-            while (x.id_b != id && x != null)
-            {
-                x = Search(s, id, x.left);
-            }
-        }
+        System.out.println("..............................");
+//        while(x != null)
+//        {
+//            if(x.id_b == id)
+//            {
+//                break;
+//            }
+//            x = Search(s, id, x.left);
+//
+//        }
         return x;
     }
 
