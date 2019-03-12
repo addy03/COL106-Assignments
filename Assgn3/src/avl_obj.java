@@ -2,10 +2,10 @@ public class avl_obj
 {
     node_object root;
 
-    public avl_obj(int id, int size, node_bin2 par)
+    public avl_obj(int id, int size, int par)
     {
         root = new node_object(id, size, 0);
-        root.par_bin_id = par.id_bin.get(par.id_bin.size()-1);
+        root.par_bin_id = par;
     }
 
     public node_object Search(int s)
@@ -312,7 +312,7 @@ public class avl_obj
     }
 
     // Function to add a new node to the AVL tree.
-    public void AddNode(int id, int obj_size, node_bin2 par)
+    public void AddNode(int id, int obj_size, int par)
     {
         node_object y, x = null;
         y = root;
@@ -340,7 +340,7 @@ public class avl_obj
         else
         {
             node_object a = new node_object(id, obj_size,0);
-            a.par_bin_id = par.id_bin.get(par.id_bin.size()-1);
+            a.par_bin_id = par;
             a.parent = x;
             if(x.id_o < id)
             {

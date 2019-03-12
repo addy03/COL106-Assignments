@@ -38,18 +38,26 @@ public class BestFit2
             max = max.right;
         }
 
-        int bin_id_par = max.id_bin.get(max.id_bin.size()-1);
+        int bin_id_par = max.id_bin.get(0);
+
+        for(int i=1; i<max.id_bin.size(); i++)
+        {
+            if(max.id_bin.get(i) > bin_id_par)
+            {
+                bin_id_par = max.id_bin.get(i);
+            }
+        }
         node_bin x1 = bin.Search(bin_id_par);
 
         if(max.rem_capacity >= s)
         {
             if(obj == null)
             {
-                obj = new avl_obj(id, s, max);
+                obj = new avl_obj(id, s, bin_id_par);
             }
             else
             {
-                obj.AddNode(id, s, max);
+                obj.AddNode(id, s, bin_id_par);
             }
 
             x1.objects.add(x1.objects.size(), id);
