@@ -439,118 +439,44 @@ public class avl_rem_bin2
     {
         node_bin2 x = Search(cap);
 
-        if(x.id_bin.size() == 1)
+        if(!(x.left != null && x.right != null))
         {
-            if(!(x.left != null && x.right != null))
+            if(x.left == null && x.right == null)
             {
-                if(x.left == null && x.right == null)
+                // If both children are null;
+                if(x != root)
                 {
-                    // If both children are null;
-                    if(x != root)
+                    if(x == x.parent.left)
                     {
-                        if(x == x.parent.left)
-                        {
-                            x.parent.left = null;
-                        }
-                        else
-                        {
-                            x.parent.right = null;
-                        }
+                        x.parent.left = null;
                     }
                     else
                     {
-                        root = null;
+                        x.parent.right = null;
                     }
                 }
                 else
                 {
-                    // If only one child is null;
-                    node_bin2 a;
-                    if(x.left == null)
-                    {
-                        a = x.right;
-                    }
-                    else
-                    {
-                        a = x.left;
-                    }
-                    a.parent = x.parent;
-
-                    if(x != root)
-                    {
-                        if(x == x.parent.left)
-                        {
-                            x.parent.left = a;
-                        }
-                        else
-                        {
-                            x.parent.right = a;
-                        }
-                    }
-                    else
-                    {
-                        root = a;
-                    }
-                }
-                node_bin2 rot = x;
-                while(rot != null)
-                {
-                    rot = rot.parent;
-
-                    int diff = 0;
-                    if(rot != null)
-                    {
-                        update_height(rot, rot.left, rot.right);
-                        if (rot.left != null && rot.right != null)
-                        {
-                            diff = Math.abs(rot.right.height - rot.left.height);
-                        }
-                        else
-                        {
-                            if(rot.left == null && rot.right != null)
-                            {
-                                diff = rot.right.height + 1;
-                            }
-                            else if(rot.left != null && rot.right == null)
-                            {
-                                diff = rot.left.height + 1;
-                            }
-                        }
-                    }
-                    if(diff > 1)
-                    {
-                        node_rotate(rot);
-                    }
+                    root = null;
                 }
             }
             else
             {
-                node_bin2 a = x.left;
-                while (a.right != null)
+                // If only one child is null;
+                node_bin2 a;
+                if(x.left == null)
                 {
-                    a = a.right;
+                    a = x.right;
                 }
-                a = DeleteNode(a.rem_capacity);
-
-                // Updating a.
-                a.left = x.left;
-                a.right = x.right;
+                else
+                {
+                    a = x.left;
+                }
                 a.parent = x.parent;
-                a.height = x.height;
 
-                if (x.left != null)
+                if(x != root)
                 {
-                    x.left.parent = a;
-                }
-
-                if(x.right != null)
-                {
-                    x.right.parent = a;
-                }
-
-                if(x.parent != null)
-                {
-                    if(x.parent.left == x)
+                    if(x == x.parent.left)
                     {
                         x.parent.left = a;
                     }
@@ -558,12 +484,84 @@ public class avl_rem_bin2
                     {
                         x.parent.right = a;
                     }
-                }else
+                }
+                else
                 {
                     root = a;
                 }
             }
+            node_bin2 rot = x;
+            while(rot != null)
+            {
+                rot = rot.parent;
+
+                int diff = 0;
+                if(rot != null)
+                {
+                    update_height(rot, rot.left, rot.right);
+                    if (rot.left != null && rot.right != null)
+                    {
+                        diff = Math.abs(rot.right.height - rot.left.height);
+                    }
+                    else
+                    {
+                        if(rot.left == null && rot.right != null)
+                        {
+                            diff = rot.right.height + 1;
+                        }
+                        else if(rot.left != null && rot.right == null)
+                        {
+                            diff = rot.left.height + 1;
+                        }
+                    }
+                }
+                if(diff > 1)
+                {
+                    node_rotate(rot);
+                }
+            }
         }
+        else
+        {
+            node_bin2 a = x.left;
+            while (a.right != null)
+            {
+                a = a.right;
+            }
+            a = DeleteNode(a.rem_capacity);
+
+            // Updating a.
+            a.left = x.left;
+            a.right = x.right;
+            a.parent = x.parent;
+            a.height = x.height;
+
+            if (x.left != null)
+            {
+                x.left.parent = a;
+            }
+
+            if(x.right != null)
+            {
+                x.right.parent = a;
+            }
+
+            if(x.parent != null)
+            {
+                if(x.parent.left == x)
+                {
+                    x.parent.left = a;
+                }
+                else
+                {
+                    x.parent.right = a;
+                }
+            }else
+            {
+                root = a;
+            }
+        }
+
         return x;
     }
 
@@ -576,7 +574,7 @@ public class avl_rem_bin2
         else
         {
             InorderTraversal(x.left);
-            System.out.print(x.rem_capacity + " " + x + " " + x.height + "  ");
+            System.out.print(x.rem_capacity + " " + x + " " + x.height + " " + x.id_bin.size() + "  ");
             if(x.parent != null)
             {
                 System.out.print(" " + x.parent.rem_capacity + " " + x.parent);

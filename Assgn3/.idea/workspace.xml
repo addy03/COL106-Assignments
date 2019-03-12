@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3f86e6aa-0766-4e20-b58a-af16927eeccb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BestFit2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFit2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BestFit2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFit2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/avl_obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_obj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/avl_obj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_obj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/avl_rem_bin2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_rem_bin2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/avl_rem_bin2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/avl_rem_bin2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node_bin2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/node_bin2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node_bin2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node_bin2.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+            <state relative-caret-position="493">
+              <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_rem_bin2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3980">
-              <caret line="532" column="45" lean-forward="true" selection-start-line="532" selection-start-column="45" selection-end-line="532" selection-end-column="45" />
+            <state relative-caret-position="2161">
+              <caret line="440" selection-start-line="440" selection-end-line="440" />
               <folding>
                 <element signature="e#93#94#0" expanded="true" />
                 <element signature="e#140#141#0" expanded="true" />
@@ -83,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/BestFit2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
-              <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+              <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -112,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="559" column="21" selection-start-line="434" selection-start-column="8" selection-end-line="559" selection-end-column="21" />
+            <state relative-caret-position="2331">
+              <caret line="557" column="17" lean-forward="true" selection-start-line="557" selection-start-column="17" selection-end-line="557" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -157,9 +155,9 @@
         <option value="$PROJECT_DIR$/src/node_bin.java" />
         <option value="$PROJECT_DIR$/src/BestFit.java" />
         <option value="$PROJECT_DIR$/src/avl_rem_bin.java" />
-        <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/avl_obj.java" />
         <option value="$PROJECT_DIR$/src/node_bin2.java" />
+        <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/avl_rem_bin2.java" />
         <option value="$PROJECT_DIR$/src/BestFit2.java" />
       </list>
@@ -198,7 +196,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552332221840" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552361899927" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -331,16 +329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BestFit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -365,17 +353,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/avl_obj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="559" column="21" selection-start-line="434" selection-start-column="8" selection-end-line="559" selection-end-column="21" />
+        <state relative-caret-position="2331">
+          <caret line="557" column="17" lean-forward="true" selection-start-line="557" selection-start-column="17" selection-end-line="557" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/avl_rem_bin2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3980">
-          <caret line="532" column="45" lean-forward="true" selection-start-line="532" selection-start-column="45" selection-end-line="532" selection-end-column="45" />
+        <state relative-caret-position="2161">
+          <caret line="440" selection-start-line="440" selection-end-line="440" />
           <folding>
             <element signature="e#93#94#0" expanded="true" />
             <element signature="e#140#141#0" expanded="true" />
@@ -386,7 +384,7 @@
     <entry file="file://$PROJECT_DIR$/src/BestFit2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
-          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
         </state>
       </provider>
     </entry>
