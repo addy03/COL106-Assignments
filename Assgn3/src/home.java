@@ -9,7 +9,7 @@ public class home
         BestFit2 new_fit = new BestFit2();
         try
         {
-            Scanner input = new Scanner(new File("new_medium.txt"));
+            Scanner input = new Scanner(new File("new_small.txt"));
             String answer;
 
             while(input.hasNext())
@@ -17,35 +17,37 @@ public class home
                 answer = input.nextLine();
                 String[] splited = answer.split(" ");
                 int a = Integer.parseInt(splited[0]);
-                if(splited.length == 3)
-                {
-                    System.out.println(a + " " + splited[1] + " " + splited[2]);
-                }
-                else
-                {
-                    System.out.println(a + " " + splited[1]);
-                }
-                System.out.println();
+//                if(splited.length == 3)
+//                {
+//                    System.out.println(a + " " + splited[1] + " " + splited[2]);
+//                }
+//                else
+//                {
+//                    System.out.println(a + " " + splited[1]);
+//                }
+//                System.out.println();
                 if (a == 1) {
                     new_fit.AddBin(Integer.parseInt(splited[1]), Integer.parseInt(splited[2]));
                 } else if (a == 2) {
-                    new_fit.AddObject(Integer.parseInt(splited[1]), Integer.parseInt(splited[2]));
+                    int x = new_fit.AddObject(Integer.parseInt(splited[1]), Integer.parseInt(splited[2]));
+                    System.out.println(x);
                 } else if (a == 3) {
-                    new_fit.DeleteObject(Integer.parseInt(splited[1]));
+                    int x = new_fit.DeleteObject(Integer.parseInt(splited[1]));
+                    System.out.println(x);
                 } else if (a == 4) {
                     new_fit.PrintBin(Integer.parseInt(splited[1]));
                 }
 
-                new_fit.bin.InorderTraversal(new_fit.bin.root);
-                System.out.println();
-                new_fit.rem.InorderTraversal(new_fit.rem.root);
-                System.out.println();
-                if(new_fit.obj != null)
-                {
-                    new_fit.obj.InorderTraversal(new_fit.obj.root);
-                    System.out.println();
-                }
-                System.out.println("_____________________________________");
+//                new_fit.bin.InorderTraversal(new_fit.bin.root);
+//                System.out.println();
+//                new_fit.rem.InorderTraversal(new_fit.rem.root);
+//                System.out.println();
+//                if(new_fit.obj != null)
+//                {
+//                    new_fit.obj.InorderTraversal(new_fit.obj.root);
+//                    System.out.println();
+//                }
+//                System.out.println("_____________________________________");
             }
 
         }

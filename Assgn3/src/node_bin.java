@@ -8,6 +8,7 @@ public class node_bin
     int rem_capacity;
     int height;
     List<Integer> objects = new ArrayList<>();
+    List<Integer> obj_size = new ArrayList<>();
     node_bin parent = null;
     node_bin left = null;
     node_bin right = null;

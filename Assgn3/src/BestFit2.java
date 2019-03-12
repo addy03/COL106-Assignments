@@ -52,6 +52,7 @@ public class BestFit2
             }
 
             x1.objects.add(x1.objects.size(), id);
+            x1.obj_size.add(x1.obj_size.size(), s);
             node_bin2 x = rem.DeleteNode(x1.rem_capacity);
 
             x1.rem_capacity -= s;
@@ -76,7 +77,7 @@ public class BestFit2
         return x1.id_b;
     }
 
-    public void DeleteObject(int id)
+    public int DeleteObject(int id)
     {
         //Update object AVL
         node_object x = obj.DeleteNode(id);
@@ -93,6 +94,7 @@ public class BestFit2
             if(p_bin.objects.get(i) == id)
             {
                 p_bin.objects.remove(i);
+                p_bin.obj_size.remove(i);
                 break;
             }
         }
@@ -109,7 +111,7 @@ public class BestFit2
         }
 
         rem.AddNode(p_bin.id_b, p_bin.rem_capacity);
-
+        return p;
     }
 
     public void PrintBin(int id)
@@ -118,7 +120,7 @@ public class BestFit2
         try
         {
             for(int i=0;i<x.objects.size();i++){
-                System.out.println(x.objects.get(i));
+                System.out.println(x.objects.get(i) + " " + x.obj_size.get(i));
             }
         }
         catch(NullPointerException e)
