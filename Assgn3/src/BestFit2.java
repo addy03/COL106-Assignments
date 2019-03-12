@@ -38,7 +38,8 @@ public class BestFit2
             max = max.right;
         }
 
-        node_bin x1 = bin.Search(max.id_bin.get(0));
+        int bin_id_par = max.id_bin.get(max.id_bin.size()-1);
+        node_bin x1 = bin.Search(bin_id_par);
 
         if(max.rem_capacity >= s)
         {

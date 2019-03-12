@@ -5,7 +5,7 @@ public class avl_obj
     public avl_obj(int id, int size, node_bin2 par)
     {
         root = new node_object(id, size, 0);
-        root.par_bin_id = par.id_bin.get(0);
+        root.par_bin_id = par.id_bin.get(par.id_bin.size()-1);
     }
 
     public node_object Search(int s)
@@ -340,7 +340,7 @@ public class avl_obj
         else
         {
             node_object a = new node_object(id, obj_size,0);
-            a.par_bin_id = par.id_bin.get(0);
+            a.par_bin_id = par.id_bin.get(par.id_bin.size()-1);
             a.parent = x;
             if(x.id_o < id)
             {
