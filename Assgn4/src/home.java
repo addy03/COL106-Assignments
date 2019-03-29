@@ -7,12 +7,18 @@ public class home
     {
         try
         {
-            Scanner input = new Scanner(new File("inp_small.txt"));
-            String s = input.nextLine();
+            Scanner input = new Scanner(new File("inp.txt"));
             try
             {
-                FileWriter os = new FileWriter("out.txt", true);
-                os.write(s);
+                FileWriter os = new FileWriter("out.txt");
+                String s;
+                while(input.hasNext())
+                {
+                    s = input.nextLine();
+                    os.write(s);
+                    os.write("\r\n");
+                }
+                os.close();
             }
             catch(IOException e)
             {
