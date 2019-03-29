@@ -113,64 +113,85 @@ public class home
                 {
                     String s = input.nextLine();
                     int i=1;
+//                    while(Character.toString(s.charAt(i)) != " ")
+//                    {
+//                        i = i + 1;
+//                    }
+//                    String w;
+//                    if(Character.toString(s.charAt(i-1)) != " ")
+//                    {
+//                        w = Character.toString(s.charAt(i-1));
+//                    }
+//                    else
+//                    {
+//                        w = Character.toString(s.charAt(i));
+//                        i = i+1;
+//                    }
                     String w = Character.toString(s.charAt(i-1));
                     System.out.println(w);
                     while(i<s.length())
                     {
-                        String x = Character.toString(s.charAt(i));
-                        String a = w + x;
-                        System.out.println(a);
-                        int h = hashCode(a, ht);
-                        boolean stat = get_stat(a, h, ht);
-
-                        if(stat)
+                        if(Character.toString(s.charAt(i)) == " ")
                         {
-                            w = a;
                             i = i+1;
                         }
                         else
                         {
-                            System.out.println(w);
-                            int h2 = hashCode(w, ht);
-                            System.out.println(h2);
-                            node iter2 = ht[h2].first;
-                            do
-                            {
-                                if(iter2.st.equals(w))
-                                {
-                                    break;
-                                }
-                                iter2 = iter2.next;
-                            }
-                            while(iter2.next != null);
+                            String x = Character.toString(s.charAt(i));
+                            String a = w + x;
+                            System.out.println(a);
+                            int h = hashCode(a, ht);
+                            boolean stat = get_stat(a, h, ht);
 
-                            System.out.println(iter2);
-                            os.write(iter2.bit);
-                            byte[] code = new byte[2];
-                            code[0] = (byte)b2;
-                            code[1] = (byte)b1;
-                            if(b1 == 127)
+                            if(stat)
                             {
-                                b1 = -128;
+                                w = a;
+                                i = i+1;
                             }
                             else
                             {
-                                b1 = b1 + 1;
-                            }
-                            if(b1 == -1)
-                            {
-                                if(b2 == 127)
+                                System.out.println(w);
+                                int h2 = hashCode(w, ht);
+                                System.out.println(h2);
+                                node iter2 = ht[h2].first;
+                                do
                                 {
-                                    b2 = -128;
+                                    if(iter2.st.equals(w))
+                                    {
+                                        break;
+                                    }
+                                    iter2 = iter2.next;
+                                }
+                                while(iter2.next != null);
+
+                                System.out.println(iter2);
+                                os.write(iter2.bit);
+                                byte[] code = new byte[2];
+                                code[0] = (byte)b2;
+                                code[1] = (byte)b1;
+                                if(b1 == 127)
+                                {
+                                    b1 = -128;
                                 }
                                 else
                                 {
-                                    b2 = b2 + 1;
+                                    b1 = b1 + 1;
                                 }
+                                if(b1 == -1)
+                                {
+                                    if(b2 == 127)
+                                    {
+                                        b2 = -128;
+                                    }
+                                    else
+                                    {
+                                        b2 = b2 + 1;
+                                    }
+                                }
+                                ht[h].AddNode(a, code);
+                                w = x;
+                                i = i+1;
                             }
-                            ht[h].AddNode(a, code);
-                            w = x;
-                            i = i+1;
                         }
                     }
                     int h2 = hashCode(w, ht);
@@ -189,6 +210,8 @@ public class home
                     System.out.println(iter);
                     os.write(iter.bit);
                 }
+                String j = " ";
+                System.out.println((int)j);
                 os.close();
             }
             catch(IOException e)

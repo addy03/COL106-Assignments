@@ -4,9 +4,7 @@
     <list default="true" id="f63e4ab1-72ab-4c77-baa9-95be05faafd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inp.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inp_small.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inp_small.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="78" column="59" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
+            <state relative-caret-position="444">
+              <caret line="213" column="23" selection-start-line="213" selection-start-column="23" selection-end-line="213" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,8 +187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="78" column="59" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
+        <state relative-caret-position="444">
+          <caret line="213" column="23" selection-start-line="213" selection-start-column="23" selection-end-line="213" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
