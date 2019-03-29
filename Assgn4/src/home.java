@@ -3,6 +3,34 @@ import java.io.*;
 
 public class home
 {
+    static int hashCode(String s, MyList[] ht)
+    {
+        int g = 31;
+        int hash = 0;
+        for(int i=0; i<s.length(); i++)
+        {
+            hash = g*hash + s.charAt(i);
+        }
+        hash = hash%3001;
+        int init = hash;
+        int x = 1;
+        do
+        {
+            if(ht[hash].first == null)
+            {
+                break;
+            }
+            else
+            {
+                hash = hash + x*x;
+                x = x+1;
+            }
+        }
+        while(hash != init);
+
+        return hash;
+    }
+
     public static void main(String args[])
     {
         try
@@ -15,13 +43,15 @@ public class home
                 MyList[] ht = new MyList[3001];
                 for(int i=0; i<128; i++)
                 {
+                    char s1 = (char)i;
+                    String s = Character.toString(s1);
+                    int hash = hashCode(s, ht);
                     byte[] code = new byte[2];
-                    code[0] = 0; // 0 is the signed 8-bit value of 00000000
-                    code[1] = (byte)i; // -128 is the signed 8-bit value of 1000000
-                    ht.put((char)i, code);
-//                    System.out.println((char)65);
+                    code[0] = 0;
+                    code[1] = (byte)i;
+                    ht[hash].AddNode(s,code);
                 }
-                String s;
+                
                 while(input.hasNext())
                 {
                     s = input.nextLine();
