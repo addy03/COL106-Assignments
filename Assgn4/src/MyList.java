@@ -20,4 +20,15 @@ public class MyList
             first = x;
         }
     }
+
+    public void print_list()
+    {
+        node x = first;
+        while(x != null)
+        {
+            System.out.println(x.st + " ");
+            x = x.next;
+        }
+        System.out.println();
+    }
 }

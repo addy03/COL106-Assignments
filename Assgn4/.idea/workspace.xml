@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63e4ab1-72ab-4c77-baa9-95be05faafd5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state relative-caret-position="459">
+              <caret line="163" column="45" lean-forward="true" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,11 +44,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="493">
+              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding>
-                <element signature="e#77#78#0" expanded="true" />
-                <element signature="e#104#105#0" expanded="true" />
+                <element signature="e#70#71#0" expanded="true" />
+                <element signature="e#98#99#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,17 +168,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MyList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#77#78#0" expanded="true" />
-            <element signature="e#104#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -183,10 +175,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <element signature="e#70#71#0" expanded="true" />
+            <element signature="e#98#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state relative-caret-position="459">
+          <caret line="163" column="45" lean-forward="true" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
