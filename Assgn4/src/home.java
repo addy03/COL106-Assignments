@@ -122,13 +122,11 @@ public class home
                         System.out.println(a);
                         int h = hashCode(a, ht);
                         boolean stat = get_stat(a, h, ht);
-                        int flag = 0;
 
                         if(stat)
                         {
                             w = a;
                             i = i+1;
-                            flag = 1;
                         }
                         else
                         {
@@ -175,6 +173,21 @@ public class home
                             i = i+1;
                         }
                     }
+                    int h2 = hashCode(w, ht);
+                    System.out.println(h2);
+                    node iter = ht[h2].first;
+                    do
+                    {
+                        if(iter.st.equals(w))
+                        {
+                            break;
+                        }
+                        iter = iter.next;
+                    }
+                    while(iter.next != null);
+
+                    System.out.println(iter);
+                    os.write(iter.bit);
                 }
                 os.close();
             }
