@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 public class BestFit
 {
     avl_bin bin;
@@ -11,7 +13,7 @@ public class BestFit
         obj = null;
     }
 
-    public void AddBin(int id, int c)
+    public void add_bin(int id, int c)
     {
         if(bin == null && rem == null)
         {
@@ -30,7 +32,7 @@ public class BestFit
         }
     }
 
-    public int AddObject(int id, int s)
+    public int add_object(int id, int s)
     {
         node_bin2 max = rem.root;
         while(max.right != null)
@@ -86,7 +88,7 @@ public class BestFit
         return x1.id_b;
     }
 
-    public int DeleteObject(int id)
+    public int delete_object(int id)
     {
         //Update object AVL
         node_object x = obj.DeleteNode(id);
@@ -123,11 +125,16 @@ public class BestFit
         return p;
     }
 
-    public void PrintBin(int id)
+    public List<Pair<Integer, Integer>> contents(int id)
     {
         node_bin x = bin.Search(id);
         try
         {
+            List<Pair<Integer, Integer>> l = new List<Pair<Integer, Integer>>();
+            for(int i=0;i<x.objects.size();i++){
+                Pair p = new Pair(x.objects.get(i), x.obj_size.get(i));
+                l.add(p);
+            }
             for(int i=0;i<x.objects.size();i++){
                 System.out.println(x.objects.get(i) + " " + x.obj_size.get(i));
             }
