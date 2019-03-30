@@ -6,7 +6,7 @@ public class home
 {
     static int hashCode(String s, MyList[] ht)
     {
-        int g = 31;
+        int g = 11;
         long hash1 = 0;
 //        System.out.println(s);
         for(int i=0; i<s.length(); i++)
@@ -17,7 +17,6 @@ public class home
 //        System.out.println(hash);
         hash1 = hash1%3001;
         int hash = (int)hash1;
-//        System.out.println(hash);
         int init = hash;
         int x = 1;
 
@@ -74,21 +73,23 @@ public class home
         return x;
     }
 
-    public static void main(String args[]) throws IOException
+    public static void main(String args[])
     {
         try
         {
-            FileReader input = new FileReader("inp_small.txt");
-
-            String s = "";
-
-            int k ;
-
-            while((k =  input.read())!=-1){
-                char ch = (char)k;
-
-                s = s + ch;
-            }
+            String s = new Scanner(new File("inp_big.txt"))
+                    .useDelimiter("\\A").next();
+//            FileReader input = new FileReader("inp_small.txt");
+//
+//            String s = "";
+//
+//            int k ;
+//
+//            while((k =  input.read())!=-1){
+//                char ch = (char)k;
+//
+//                s = s + ch;
+//            }
 
             try
             {
