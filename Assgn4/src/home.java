@@ -178,7 +178,7 @@ public class home
                                 {
                                     b1 = b1 + 1;
                                 }
-                                if(b1 == -1)
+                                if(b1 == 0)
                                 {
                                     if(b2 == 127)
                                     {
