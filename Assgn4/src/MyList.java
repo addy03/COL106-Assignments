@@ -1,14 +1,17 @@
 public class MyList
 {
     node first;
+    int size;
 
     public MyList()
     {
         first = null;
+        size = 0;
     }
 
     public void AddNode(String st, byte[] bit)
     {
+        size = size+1;
         node x = new node(st, bit);
         if(first == null)
         {

@@ -74,12 +74,22 @@ public class home
         return x;
     }
 
-    public static void main(String args[])
+    public static void main(String args[]) throws IOException
     {
         try
         {
-            String s = new Scanner(new File("inp_small.txt"))
-                    .useDelimiter("\\A").next();
+            FileReader input = new FileReader("inp_small.txt");
+
+            String s = "";
+
+            int k ;
+
+            while((k =  input.read())!=-1){
+                char ch = (char)k;
+
+                s = s + ch;
+            }
+
             try
             {
                 OutputStream os = new FileOutputStream("out.txt");
@@ -119,20 +129,7 @@ public class home
 //                    if(s.length() > 0)
 //                    {
                         int i=1;
-//                    while(Character.toString(s.charAt(i)) != " ")
-//                    {
-//                        i = i + 1;
-//                    }
 //                    String w;
-//                    if(Character.toString(s.charAt(i-1)) != " ")
-//                    {
-//                        w = Character.toString(s.charAt(i-1));
-//                    }
-//                    else
-//                    {
-//                        w = Character.toString(s.charAt(i));
-//                        i = i+1;
-//                    }
                         String w = Character.toString(s.charAt(i-1));
 //                        System.out.println(w);
                         while(i<s.length())
@@ -169,6 +166,9 @@ public class home
                                 byte[] code = new byte[2];
                                 code[0] = (byte)b2;
                                 code[1] = (byte)b1;
+
+                                System.out.println(a + " " + b1 + " " + b2);
+                                ht[h].AddNode(a, code);
                                 if(b1 == 127)
                                 {
                                     b1 = -128;
@@ -188,11 +188,8 @@ public class home
                                         b2 = b2 + 1;
                                     }
                                 }
-                                System.out.println(a);
-                                ht[h].AddNode(a, code);
                                 w = x;
                                 i = i+1;
-
                             }
                         }
                         int h2 = hashCode(w, ht);
@@ -219,8 +216,6 @@ public class home
 //                        os.write(code1);
 //                    }
 //                }
-//                String j = " ";
-//                System.out.println((int)j);
                 os.close();
             }
             catch(IOException e)
