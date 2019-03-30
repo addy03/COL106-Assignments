@@ -1,21 +1,23 @@
 import java.util.Scanner;
 import java.io.*;
+import java.lang.*;
 
 public class home
 {
     static int hashCode(String s, MyList[] ht)
     {
         int g = 31;
-        int hash = 0;
+        long hash1 = 0;
 //        System.out.println(s);
         for(int i=0; i<s.length(); i++)
         {
-            hash = g*hash + s.charAt(i);
+            hash1 = g*hash1 + s.charAt(i);
 //            System.out.println(s.charAt(i));
         }
 //        System.out.println(hash);
-        hash = hash%3001;
-        System.out.println(hash);
+        hash1 = hash1%3001;
+        int hash = (int)hash1;
+//        System.out.println(hash);
         int init = hash;
         int x = 1;
 
@@ -28,8 +30,8 @@ public class home
             else
             {
                 node a = ht[hash].first;
-                System.out.println(a.st + " " + s);
-                System.out.println("_____________________");
+//                System.out.println(a.st + " " + s);
+//                System.out.println("_____________________");
                 int flag = 0;
                 while(a != null)
                 {
@@ -52,7 +54,7 @@ public class home
         }
         while(hash != init);
 
-        return hash;
+        return Math.abs(hash);
     }
 
     static boolean get_stat(String s, int hash, MyList[] ht)
@@ -76,7 +78,8 @@ public class home
     {
         try
         {
-            Scanner input = new Scanner(new File("inp_big.txt"));
+            String s = new Scanner(new File("inp_small.txt"))
+                    .useDelimiter("\\A").next();
             try
             {
                 OutputStream os = new FileOutputStream("out.txt");
@@ -90,13 +93,13 @@ public class home
                 for(int i=0; i<128; i++)
                 {
                     char s1 = (char)i;
-                    System.out.println(s1);
-                    String s = Character.toString(s1);
-                    int hash = hashCode(s, ht);
+                    String s2 = Character.toString(s1);
+                    int hash = hashCode(s2, ht);
                     byte[] code = new byte[2];
                     code[0] = 0;
                     code[1] = (byte)i;
-                    ht[hash].AddNode(s,code);
+                    System.out.println(s1);
+                    ht[hash].AddNode(s2,code);
                 }
 
 //                for(int i=33; i<128; i++)
@@ -109,11 +112,12 @@ public class home
                 int b2 = 0;
 //                node up = null;
 
-                while(input.hasNext())
-                {
-                    String s = input.nextLine();
-                    if(s != null)
-                    {
+//                while(input.hasNext())
+//                {
+//                    String s = input.nextLine();
+//                    System.out.println(s);
+//                    if(s.length() > 0)
+//                    {
                         int i=1;
 //                    while(Character.toString(s.charAt(i)) != " ")
 //                    {
@@ -130,74 +134,69 @@ public class home
 //                        i = i+1;
 //                    }
                         String w = Character.toString(s.charAt(i-1));
-                        System.out.println(w);
+//                        System.out.println(w);
                         while(i<s.length())
                         {
-                            if(Character.toString(s.charAt(i)) == " ")
+                            String x = Character.toString(s.charAt(i));
+                            String a = w + x;
+//                                System.out.println(a);
+                            int h = hashCode(a, ht);
+                            boolean stat = get_stat(a, h, ht);
+
+                            if(stat)
                             {
+                                w = a;
                                 i = i+1;
                             }
                             else
                             {
-                                String x = Character.toString(s.charAt(i));
-                                String a = w + x;
-                                System.out.println(a);
-                                int h = hashCode(a, ht);
-                                boolean stat = get_stat(a, h, ht);
-
-                                if(stat)
+//                                    System.out.println(w);
+                                int h2 = hashCode(w, ht);
+//                                    System.out.println(h2);
+                                node iter2 = ht[h2].first;
+                                do
                                 {
-                                    w = a;
-                                    i = i+1;
+                                    if(iter2.st.equals(w))
+                                    {
+                                        break;
+                                    }
+                                    iter2 = iter2.next;
+                                }
+                                while(iter2.next != null);
+
+//                                    System.out.println(iter2);
+                                os.write(iter2.bit);
+                                byte[] code = new byte[2];
+                                code[0] = (byte)b2;
+                                code[1] = (byte)b1;
+                                if(b1 == 127)
+                                {
+                                    b1 = -128;
                                 }
                                 else
                                 {
-                                    System.out.println(w);
-                                    int h2 = hashCode(w, ht);
-                                    System.out.println(h2);
-                                    node iter2 = ht[h2].first;
-                                    do
+                                    b1 = b1 + 1;
+                                }
+                                if(b1 == -1)
+                                {
+                                    if(b2 == 127)
                                     {
-                                        if(iter2.st.equals(w))
-                                        {
-                                            break;
-                                        }
-                                        iter2 = iter2.next;
-                                    }
-                                    while(iter2.next != null);
-
-                                    System.out.println(iter2);
-                                    os.write(iter2.bit);
-                                    byte[] code = new byte[2];
-                                    code[0] = (byte)b2;
-                                    code[1] = (byte)b1;
-                                    if(b1 == 127)
-                                    {
-                                        b1 = -128;
+                                        b2 = -128;
                                     }
                                     else
                                     {
-                                        b1 = b1 + 1;
+                                        b2 = b2 + 1;
                                     }
-                                    if(b1 == -1)
-                                    {
-                                        if(b2 == 127)
-                                        {
-                                            b2 = -128;
-                                        }
-                                        else
-                                        {
-                                            b2 = b2 + 1;
-                                        }
-                                    }
-                                    ht[h].AddNode(a, code);
-                                    w = x;
-                                    i = i+1;
                                 }
+                                System.out.println(a);
+                                ht[h].AddNode(a, code);
+                                w = x;
+                                i = i+1;
+
                             }
                         }
                         int h2 = hashCode(w, ht);
-                        System.out.println(h2);
+//                        System.out.println(h2);
                         node iter = ht[h2].first;
                         do
                         {
@@ -209,17 +208,17 @@ public class home
                         }
                         while(iter.next != null);
 
-                        System.out.println(iter);
+//                        System.out.println(iter);
                         os.write(iter.bit);
-                    }
-                    else
-                    {
-                        byte[] code1 = new byte[2];
-                        code1[0] = 0;
-                        code1[1] = 0;
-                        os.write(code1);
-                    }
-                }
+//                    }
+//                    else
+//                    {
+//                        byte[] code1 = new byte[2];
+//                        code1[0] = 0;
+//                        code1[1] = 0;
+//                        os.write(code1);
+//                    }
+//                }
 //                String j = " ";
 //                System.out.println((int)j);
                 os.close();
