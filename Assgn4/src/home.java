@@ -79,18 +79,6 @@ public class home
         {
             String s = new Scanner(new File("inp_big.txt"))
                     .useDelimiter("\\A").next();
-//            FileReader input = new FileReader("inp_small.txt");
-//
-//            String s = "";
-//
-//            int k ;
-//
-//            while((k =  input.read())!=-1){
-//                char ch = (char)k;
-//
-//                s = s + ch;
-//            }
-
             try
             {
                 OutputStream os = new FileOutputStream("out.txt");
@@ -113,110 +101,85 @@ public class home
                     ht[hash].AddNode(s2,code);
                 }
 
-//                for(int i=33; i<128; i++)
-//                {
-//                    System.out.println(i);
-//                    ht[i].print_list();
-//                }
-
                 int b1 = -128;
                 int b2 = 0;
-//                node up = null;
 
-//                while(input.hasNext())
-//                {
-//                    String s = input.nextLine();
-//                    System.out.println(s);
-//                    if(s.length() > 0)
-//                    {
-                        int i=1;
-//                    String w;
-                        String w = Character.toString(s.charAt(i-1));
+                int i=1;
+                String w = Character.toString(s.charAt(i-1));
 //                        System.out.println(w);
-                        while(i<s.length())
-                        {
-                            String x = Character.toString(s.charAt(i));
-                            String a = w + x;
+                while(i<s.length())
+                {
+                    String x = Character.toString(s.charAt(i));
+                    String a = w + x;
 //                                System.out.println(a);
-                            int h = hashCode(a, ht);
-                            boolean stat = get_stat(a, h, ht);
+                    int h = hashCode(a, ht);
+                    boolean stat = get_stat(a, h, ht);
 
-                            if(stat)
-                            {
-                                w = a;
-                                i = i+1;
-                            }
-                            else
-                            {
-//                                    System.out.println(w);
-                                int h2 = hashCode(w, ht);
-//                                    System.out.println(h2);
-                                node iter2 = ht[h2].first;
-                                do
-                                {
-                                    if(iter2.st.equals(w))
-                                    {
-                                        break;
-                                    }
-                                    iter2 = iter2.next;
-                                }
-                                while(iter2.next != null);
-
-//                                    System.out.println(iter2);
-                                os.write(iter2.bit);
-                                byte[] code = new byte[2];
-                                code[0] = (byte)b2;
-                                code[1] = (byte)b1;
-
-                                System.out.println(a + " " + b1 + " " + b2);
-                                ht[h].AddNode(a, code);
-                                if(b1 == 127)
-                                {
-                                    b1 = -128;
-                                }
-                                else
-                                {
-                                    b1 = b1 + 1;
-                                }
-                                if(b1 == 0)
-                                {
-                                    if(b2 == 127)
-                                    {
-                                        b2 = -128;
-                                    }
-                                    else
-                                    {
-                                        b2 = b2 + 1;
-                                    }
-                                }
-                                w = x;
-                                i = i+1;
-                            }
-                        }
+                    if(stat)
+                    {
+                        w = a;
+                        i = i+1;
+                    }
+                    else
+                    {
                         int h2 = hashCode(w, ht);
-//                        System.out.println(h2);
-                        node iter = ht[h2].first;
+                        node iter2 = ht[h2].first;
                         do
                         {
-                            if(iter.st.equals(w))
+                            if(iter2.st.equals(w))
                             {
                                 break;
                             }
-                            iter = iter.next;
+                            iter2 = iter2.next;
                         }
-                        while(iter.next != null);
+                        while(iter2.next != null);
+
+//                                    System.out.println(iter2);
+                        os.write(iter2.bit);
+                        byte[] code = new byte[2];
+                        code[0] = (byte)b2;
+                        code[1] = (byte)b1;
+
+                        System.out.println(a + " " + b1 + " " + b2);
+                        ht[h].AddNode(a, code);
+                        if(b1 == 127)
+                        {
+                            b1 = -128;
+                        }
+                        else
+                        {
+                            b1 = b1 + 1;
+                        }
+                        if(b1 == 0)
+                        {
+                            if(b2 == 127)
+                            {
+                                b2 = -128;
+                            }
+                            else
+                            {
+                                b2 = b2 + 1;
+                            }
+                        }
+                        w = x;
+                        i = i+1;
+                    }
+                }
+                int h2 = hashCode(w, ht);
+//                        System.out.println(h2);
+                node iter = ht[h2].first;
+                do
+                {
+                    if(iter.st.equals(w))
+                    {
+                        break;
+                    }
+                    iter = iter.next;
+                }
+                while(iter.next != null);
 
 //                        System.out.println(iter);
-                        os.write(iter.bit);
-//                    }
-//                    else
-//                    {
-//                        byte[] code1 = new byte[2];
-//                        code1[0] = 0;
-//                        code1[1] = 0;
-//                        os.write(code1);
-//                    }
-//                }
+                os.write(iter.bit);
                 os.close();
             }
             catch(IOException e)

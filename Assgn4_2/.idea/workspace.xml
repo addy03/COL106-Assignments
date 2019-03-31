@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f63e4ab1-72ab-4c77-baa9-95be05faafd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Assgn4_2/Assgn4_2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node.java" afterDir="false" />
+    <list default="true" id="1abf0285-c536-49b4-bc9e-131488d2fd0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assgn4_2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn4/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/src/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn4/src/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/src/node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,22 +21,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/home.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="134" column="50" lean-forward="true" selection-start-line="125" selection-start-column="24" selection-end-line="134" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Decompress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="108" column="8" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="139" selection-end-column="9" />
+            <state relative-caret-position="376">
+              <caret line="160" column="50" lean-forward="true" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="14" lean-forward="true" selection-end-line="12" />
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -56,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="15" column="25" lean-forward="true" selection-end-line="37" />
+            <state relative-caret-position="85">
+              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -77,12 +65,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/object.java" />
         <option value="$PROJECT_DIR$/src/MyList.java" />
-        <option value="$PROJECT_DIR$/src/home.java" />
-        <option value="$PROJECT_DIR$/src/node2.java" />
         <option value="$PROJECT_DIR$/src/node.java" />
         <option value="$PROJECT_DIR$/src/Decompress.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
       </list>
     </option>
   </component>
@@ -104,12 +96,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="Assgn4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assgn4" type="462c0819:PsiDirectoryNode" />
+              <item name="Assgn4_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assgn4_2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assgn4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assgn4" type="462c0819:PsiDirectoryNode" />
+              <item name="Assgn4_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assgn4_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -117,9 +109,6 @@
         </subPane>
       </pane>
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,11 +127,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f63e4ab1-72ab-4c77-baa9-95be05faafd5" name="Default Changelist" comment="" />
-      <created>1553854456585</created>
+      <changelist id="1abf0285-c536-49b4-bc9e-131488d2fd0f" name="Default Changelist" comment="" />
+      <created>1553960174306</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1553854456585</updated>
+      <updated>1553960174306</updated>
     </task>
     <servers />
   </component>
@@ -178,41 +167,24 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/node2.java">
+    <entry file="file://$PROJECT_DIR$/src/node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="15" column="25" lean-forward="true" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="true" selection-end-line="12" />
+        <state relative-caret-position="85">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Decompress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="108" column="8" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="139" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="134" column="50" lean-forward="true" selection-start-line="125" selection-start-column="24" selection-end-line="134" selection-end-column="50" />
+        <state relative-caret-position="376">
+          <caret line="160" column="50" lean-forward="true" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
