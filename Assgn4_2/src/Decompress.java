@@ -87,7 +87,7 @@ public class Decompress
     static boolean get_stat(byte[] bit, MyList[] ht)
     {
         int hash = hashCode(bit, ht);
-        System.out.println(hash);
+//        System.out.println(hash);
         node a = ht[hash].first;
         boolean x = false;
         while(a != null)
@@ -106,7 +106,7 @@ public class Decompress
     static String getString(byte[] ch, MyList[] ht)
     {
         int hash = hashCode(ch, ht);
-        System.out.println(hash);
+//        System.out.println(hash);
         node iter2 = ht[hash].first;
         do
         {
@@ -126,7 +126,7 @@ public class Decompress
         try
         {
 //            Scanner input = new Scanner(new File("output_input.dms"));
-            RandomAccessFile f = new RandomAccessFile("output_input.dms", "r");
+            RandomAccessFile f = new RandomAccessFile("output_aesop11.txt", "r");
             byte[] b = new byte[(int)f.length()];
             f.readFully(b);
 //            FileWriter os = new FileWriter("decode.txt", true);
@@ -153,39 +153,46 @@ public class Decompress
             int i1 = 0;
             int b1 = -128;
             int b2 = 0;
-            System.out.println(f.length() + "___________________________");
+//            System.out.println(f.length() + "___________________________");
             byte[] ch = new byte[2];
             ch[0] = b[i1];
             ch[1] = b[i1+1];
-            System.out.println((int)ch[0] + " " + (int)ch[1]);
+//            System.out.println((int)ch[0] + " " + (int)ch[1]);
             String w = getString(ch, ht);
-            System.out.println(w);
+//            System.out.println(w);
             os.write(w);
 
             while((i1+2) < f.length())
             {
-                System.out.println(i1);
+//                System.out.println(i1);
                 byte[] ch1 = new byte[2];
                 i1 = i1 + 2;
                 ch1[0] = b[i1];
                 ch1[1] = b[i1+1];
-                System.out.println((int)ch1[0] + " " + (int)ch1[1]);
+//                System.out.println((int)ch1[0] + " " + (int)ch1[1]);
                 boolean stat = get_stat(ch1, ht);
-                System.out.println(stat);
+//                System.out.println(stat);
 
                 if(stat)
                 {
                     String x = getString(ch1, ht);
                     os.write(x);
-                    System.out.println(x);
-                    String a = w + x;
+//                    System.out.println(x);
+                    String a = w + x.charAt(0);
+
+//                    int c = 0;
+//                    while(c < x.length())
+//                    {
+//                        a = w + x.charAt(c);
+//
+//                    }
 
                     byte[] code_new = new byte[2];
                     code_new[0] = (byte)b2;
                     code_new[1] = (byte)b1;
                     int hash_new = hashCode(code_new, ht);
                     ht[hash_new].AddNode(a, code_new);
-
+                    System.out.println(a);
                     if(b1 == 127)
                     {
                         b1 = -128;
@@ -212,14 +219,14 @@ public class Decompress
                 {
                     String x = w + w.charAt(0);
                     os.write(x);
-                    System.out.println(x);
+//                    System.out.println(x);
 
                     byte[] code_new = new byte[2];
                     code_new[0] = (byte)b2;
                     code_new[1] = (byte)b1;
                     int hash_new = hashCode(code_new, ht);
                     ht[hash_new].AddNode(x, code_new);
-
+                    System.out.println(x);
                     if(b1 == 127)
                     {
                         b1 = -128;
@@ -242,7 +249,7 @@ public class Decompress
 
                     w = x;
                 }
-                System.out.println();
+//                System.out.println();
             }
             os.close();
         }
