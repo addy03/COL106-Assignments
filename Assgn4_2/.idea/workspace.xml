@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1abf0285-c536-49b4-bc9e-131488d2fd0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assgn4_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assgn4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assgn4/src/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/src/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assgn4/src/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4/src/node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Decompress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Decompress.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Decompress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="160" column="50" lean-forward="true" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
+            <state relative-caret-position="308">
+              <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,6 +108,9 @@
       </pane>
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -183,8 +184,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Decompress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="160" column="50" lean-forward="true" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="50" />
+        <state relative-caret-position="308">
+          <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
