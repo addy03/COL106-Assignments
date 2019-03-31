@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.io.*;
 import java.lang.*;
 
@@ -125,16 +124,14 @@ public class Decompress
     {
         try
         {
-//            Scanner input = new Scanner(new File("output_input.dms"));
-            RandomAccessFile f = new RandomAccessFile("output_aesop11.txt", "r");
+            RandomAccessFile f = new RandomAccessFile(new File(args[0]), "r");
             byte[] b = new byte[(int)f.length()];
             f.readFully(b);
-//            FileWriter os = new FileWriter("decode.txt", true);
-            FileOutputStream outputStream = new FileOutputStream("decode.txt");
+            FileOutputStream outputStream = new FileOutputStream(new File(args[1]));
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-16");
             BufferedWriter os = new BufferedWriter(outputStreamWriter);
             MyList[] ht = new MyList[65544];
-            for(int i=0; i<65543; i++)
+            for(int i=0; i<65544; i++)
             {
                 ht[i] = new MyList();
             }
@@ -146,7 +143,7 @@ public class Decompress
                 code[0] = 0;
                 code[1] = (byte)i;
                 int hash = hashCode(code, ht);
-                System.out.println(s1 + " " + hash);
+//                System.out.println(s1 + " " + hash);
                 ht[hash].AddNode(s2,code);
             }
 
@@ -180,19 +177,12 @@ public class Decompress
 //                    System.out.println(x);
                     String a = w + x.charAt(0);
 
-//                    int c = 0;
-//                    while(c < x.length())
-//                    {
-//                        a = w + x.charAt(c);
-//
-//                    }
-
                     byte[] code_new = new byte[2];
                     code_new[0] = (byte)b2;
                     code_new[1] = (byte)b1;
                     int hash_new = hashCode(code_new, ht);
                     ht[hash_new].AddNode(a, code_new);
-                    System.out.println(a);
+//                    System.out.println(a);
                     if(b1 == 127)
                     {
                         b1 = -128;
@@ -226,7 +216,7 @@ public class Decompress
                     code_new[1] = (byte)b1;
                     int hash_new = hashCode(code_new, ht);
                     ht[hash_new].AddNode(x, code_new);
-                    System.out.println(x);
+//                    System.out.println(x);
                     if(b1 == 127)
                     {
                         b1 = -128;

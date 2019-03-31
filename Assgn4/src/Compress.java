@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.*;
 import java.lang.*;
 
-public class home
+public class Compress
 {
     static int hashCode(String s, MyList[] ht)
     {
@@ -15,7 +15,7 @@ public class home
 //            System.out.println(s.charAt(i));
         }
 //        System.out.println(hash);
-        hash1 = hash1%3001;
+        hash1 = hash1%65543;
         int hash = (int)hash1;
         int init = hash;
         int x = 1;
@@ -46,7 +46,7 @@ public class home
                 }
                 else
                 {
-                    hash = (hash + x*x)%3001;
+                    hash = (hash + x*x)%65543;
                     x = x+1;
                 }
             }
@@ -77,14 +77,14 @@ public class home
     {
         try
         {
-            String s = new Scanner(new File("inp_big.txt"))
+            String s = new Scanner(new File(args[0]))
                     .useDelimiter("\\A").next();
             try
             {
-                OutputStream os = new FileOutputStream("out.txt");
+                OutputStream os = new FileOutputStream(new File(args[1]));
 //                os.write(code);
-                MyList[] ht = new MyList[3002];
-                for(int i=0; i<3002; i++)
+                MyList[] ht = new MyList[65544];
+                for(int i=0; i<65544; i++)
                 {
                     ht[i] = new MyList();
                 }
@@ -97,7 +97,7 @@ public class home
                     byte[] code = new byte[2];
                     code[0] = 0;
                     code[1] = (byte)i;
-                    System.out.println(s1);
+//                    System.out.println(s1);
                     ht[hash].AddNode(s2,code);
                 }
 
@@ -140,7 +140,7 @@ public class home
                         code[0] = (byte)b2;
                         code[1] = (byte)b1;
 
-                        System.out.println(a + " " + b1 + " " + b2);
+//                        System.out.println(a + " " + b1 + " " + b2);
                         ht[h].AddNode(a, code);
                         if(b1 == 127)
                         {
