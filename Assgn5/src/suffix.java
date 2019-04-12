@@ -110,7 +110,6 @@ public class suffix
         System.out.println("===================");
         print_elem(root);
         System.out.println("===================");
-        System.out.println();
     }
 
     public void print_elem(node a)
