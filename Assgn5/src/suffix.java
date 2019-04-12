@@ -25,21 +25,27 @@ public class suffix
             while(f.child.first != null)
             {
                 listNode a = f.child.first;
-                System.out.println(s.charAt(0));
-                System.out.println(a.elem.s.charAt(0));
                 while(a != null)
                 {
                     int j = 0;
 
                     String s1 = Character.toString(a.elem.s.charAt(j));
                     String s2 = Character.toString(s.charAt(0));
+                    System.out.println(a.elem.s);
                     System.out.println(s1.equals(s2));
                     while(s1.equals(s2))
                     {
                         s = s.substring(1);
                         j += 1;
-                        s1 = Character.toString(a.elem.s.charAt(j));
-                        s2 = Character.toString(s.charAt(0));
+                        if(s.length()>0 && a.elem.s.length()>j)
+                        {
+                            s1 = Character.toString(a.elem.s.charAt(j));
+                            s2 = Character.toString(s.charAt(0));
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                     pos = j;
                     if(j > 0)
@@ -62,7 +68,15 @@ public class suffix
             }
             if(pos > 0)
             {
-                node x = new node(s);
+                node x;
+                if(s.length() > 0)
+                {
+                    x = new node(s);
+                }
+                else
+                {
+                    x = new node("#");
+                }
                 node x2 = new node(f.s.substring(pos));
                 f.s = f.s.substring(0,pos);
                 f.child.AddNode(x);
@@ -89,7 +103,7 @@ public class suffix
         System.out.println(a.s);
         while(x != null)
         {
-            System.out.print(x.elem.s + " ");
+            System.out.println(x.elem.s);
             x = x.next;
         }
         System.out.println();
