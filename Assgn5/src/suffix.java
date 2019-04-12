@@ -20,9 +20,8 @@ public class suffix
         else
         {
             node f = root;
-            System.out.println(f.s);
             int pos = 0;
-            while(f.child.first != null)
+            while(f != null)
             {
                 listNode a = f.child.first;
                 while(a != null)
@@ -31,8 +30,7 @@ public class suffix
 
                     String s1 = Character.toString(a.elem.s.charAt(j));
                     String s2 = Character.toString(s.charAt(0));
-                    System.out.println(a.elem.s);
-                    System.out.println(s1.equals(s2));
+//                    System.out.println(s1.equals(s2));
                     while(s1.equals(s2))
                     {
                         s = s.substring(1);
@@ -48,6 +46,7 @@ public class suffix
                         }
                     }
                     pos = j;
+
                     if(j > 0)
                     {
                         break;
@@ -61,11 +60,17 @@ public class suffix
                 {
                     break;
                 }
+                else if(s.length() == 0)
+                {
+                    f = a.elem;
+                    break;
+                }
                 else
                 {
                     f = a.elem;
                 }
             }
+//            System.out.println(f.s + "   !!!!!!!!!!!!!!!!!!!!!!!");
             if(pos > 0)
             {
                 node x;
@@ -78,9 +83,28 @@ public class suffix
                     x = new node("#");
                 }
                 node x2 = new node(f.s.substring(pos));
+                if(f.child.first != null)
+                {
+                    listNode m = f.child.first;
+                    while(m != null)
+                    {
+                        if(!m.elem.s.equals("#"))
+                        {
+                            m.elem.s = f.s.substring(pos) + m.elem.s;
+                        }
+                        else
+                        {
+                            m.elem.s = f.s.substring(pos);
+                        }
+                        m = m.next;
+                    }
+                }
+                else
+                {
+                    f.child.AddNode(x2);
+                }
                 f.s = f.s.substring(0,pos);
                 f.child.AddNode(x);
-                f.child.AddNode(x2);
                 x.parent = f;
                 x2.parent = f;
             }

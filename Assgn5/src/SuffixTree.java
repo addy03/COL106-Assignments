@@ -17,7 +17,7 @@ public class SuffixTree
                 System.out.println("String added: " + text.substring(i));
                 tree.AddElement(text.substring(i));
             }
-
+//            tree.print_elem(tree.root);
 //            String s = input.nextLine();
 //            int cases = Integer.parseInt(s);
 //            for(int i=0; i<cases; i++)
