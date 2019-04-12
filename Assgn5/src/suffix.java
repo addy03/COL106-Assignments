@@ -56,6 +56,7 @@ public class suffix
                         a = a.next;
                     }
                 }
+
                 if(a == null)
                 {
                     break;
@@ -88,21 +89,12 @@ public class suffix
                     listNode m = f.child.first;
                     while(m != null)
                     {
-                        if(!m.elem.s.equals("#"))
-                        {
-                            m.elem.s = f.s.substring(pos) + m.elem.s;
-                        }
-                        else
-                        {
-                            m.elem.s = f.s.substring(pos);
-                        }
+                        x2.child.AddNode(m.elem);
                         m = m.next;
                     }
                 }
-                else
-                {
-                    f.child.AddNode(x2);
-                }
+                f.child.first = null;
+                f.child.AddNode(x2);
                 f.s = f.s.substring(0,pos);
                 f.child.AddNode(x);
                 x.parent = f;
