@@ -7,7 +7,7 @@ public class MyList
         first = null;
     }
 
-    public void AddNode(node st, byte[] bit)
+    public void AddNode(node st)
     {
         listNode x = new listNode(st);
         if(first == null)

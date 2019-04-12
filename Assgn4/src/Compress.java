@@ -6,7 +6,7 @@ public class Compress
 {
     static int hashCode(String s, MyList[] ht)
     {
-        int g = 11;
+        int g = 7;
         long hash1 = 0;
 //        System.out.println(s);
         for(int i=0; i<s.length(); i++)
@@ -97,7 +97,7 @@ public class Compress
                     byte[] code = new byte[2];
                     code[0] = 0;
                     code[1] = (byte)i;
-//                    System.out.println(s1);
+                    System.out.println(s1);
                     ht[hash].AddNode(s2,code);
                 }
 
@@ -140,7 +140,7 @@ public class Compress
                         code[0] = (byte)b2;
                         code[1] = (byte)b1;
 
-//                        System.out.println(a + " " + b1 + " " + b2);
+                        System.out.println(a + " " + b1 + " " + b2);
                         ht[h].AddNode(a, code);
                         if(b1 == 127)
                         {
