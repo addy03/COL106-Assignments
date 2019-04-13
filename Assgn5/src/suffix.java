@@ -21,7 +21,10 @@ public class suffix
         {
             node f = root;
             int pos = 0;
-            while(f != null)
+            int flag = 0;
+            // flag = 1 : Add #
+            // flag = 2 : No string match
+            while(flag == 0)
             {
                 listNode a = f.child.first;
                 while(a != null)
@@ -59,20 +62,33 @@ public class suffix
 
                 if(a == null)
                 {
-                    break;
+                    flag = 2;
                 }
                 else if(s.length() == 0)
                 {
                     f = a.elem;
-                    break;
+                    flag = 1;
+                }
+                else if(a.elem.s.length() == pos+1)
+                {
+                    f = a.elem;
+                    flag = 0;
                 }
                 else
                 {
                     f = a.elem;
+                    flag = 3;
                 }
             }
+            System.out.println(flag + " " + pos);
 //            System.out.println(f.s + "   !!!!!!!!!!!!!!!!!!!!!!!");
-            if(pos > 0)
+            if(flag == 2)
+            {
+                node x = new node(s);
+                x.parent = f;
+                f.child.AddNode(x);
+            }
+            else if(flag == 3 || flag == 1)
             {
                 node x;
                 if(s.length() > 0)
@@ -83,6 +99,7 @@ public class suffix
                 {
                     x = new node("#");
                 }
+                System.out.println(f.s.length() + " " + f.s);
                 node x2 = new node(f.s.substring(pos));
                 if(f.child.first != null)
                 {
@@ -100,12 +117,41 @@ public class suffix
                 x.parent = f;
                 x2.parent = f;
             }
-            else
-            {
-                node x = new node(s);
-                f.child.AddNode(x);
-                x.parent = f;
-            }
+
+//            if(pos > 0)
+//            {
+//                node x;
+//                if(s.length() > 0)
+//                {
+//                    x = new node(s);
+//                }
+//                else
+//                {
+//                    x = new node("#");
+//                }
+//                node x2 = new node(f.s.substring(pos));
+//                if(f.child.first != null)
+//                {
+//                    listNode m = f.child.first;
+//                    while(m != null)
+//                    {
+//                        x2.child.AddNode(m.elem);
+//                        m = m.next;
+//                    }
+//                }
+//                f.child.first = null;
+//                f.child.AddNode(x2);
+//                f.s = f.s.substring(0,pos);
+//                f.child.AddNode(x);
+//                x.parent = f;
+//                x2.parent = f;
+//            }
+//            else
+//            {
+//                node x = new node(s);
+//                f.child.AddNode(x);
+//                x.parent = f;
+//            }
         }
         System.out.println("===================");
         print_elem(root);
