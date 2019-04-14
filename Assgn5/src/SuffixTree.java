@@ -4,6 +4,38 @@ import java.io.*;
 
 public class SuffixTree
 {
+
+    public static List<Integer[]> sort_list(List<Integer[]> ind_list)
+    {
+        for(int i=1; i<ind_list.size(); i++)
+        {
+            for(int j=i-1; j>=0; j--)
+            {
+                if(ind_list.get(j)[1] > ind_list.get(j+1)[1])
+                {
+                    Integer[] x = ind_list.get(j);
+                    ind_list.set(j, ind_list.get(j+1));
+                    ind_list.set(j+1, x);
+                }
+            }
+        }
+
+        for(int i=1; i<ind_list.size(); i++)
+        {
+            for(int j=i-1; j>=0; j--)
+            {
+                if(ind_list.get(j)[0] > ind_list.get(j+1)[0])
+                {
+                    Integer[] x = ind_list.get(j);
+                    ind_list.set(j, ind_list.get(j+1));
+                    ind_list.set(j+1, x);
+                }
+            }
+        }
+
+        return ind_list;
+    }
+
     public static List<Integer[]> get_ind(String inp, suffix tree)
     {
         List<node> node_list = new ArrayList<>();
@@ -165,6 +197,7 @@ public class SuffixTree
                     {
                         inp = inp.substring(1);
                         List<Integer[]> l = get_ind(inp, tree);
+                        l = sort_list(l);
                         for(int j=0; j<l.size(); j++)
                         {
                             Integer[] m = l.get(j);
@@ -180,6 +213,7 @@ public class SuffixTree
                     {
                         inp = inp.substring(0,inp.length()-1);
                         List<Integer[]> l = get_ind(inp, tree);
+                        l = sort_list(l);
                         for(int j=0; j<l.size(); j++)
                         {
                             Integer[] m = l.get(j);
@@ -198,6 +232,8 @@ public class SuffixTree
                         s2 = inp.substring(ind+1);
                         List<Integer[]> l1 = get_ind(s1, tree);
                         List<Integer[]> l2 = get_ind(s2, tree);
+                        l1 = sort_list(l1);
+                        l2 = sort_list(l2);
                         for(int j=0; j<l1.size(); j++)
                         {
                             Integer[] m1 = l1.get(j);
@@ -217,6 +253,7 @@ public class SuffixTree
                 else
                 {
                     List<Integer[]> l = get_ind(inp, tree);
+                    l = sort_list(l);
                     for(int j=0; j<l.size(); j++)
                     {
                         Integer[] m = l.get(j);
