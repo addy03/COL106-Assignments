@@ -165,11 +165,84 @@ public class SuffixTree
             for(int i=0; i<cases; i++)
             {
                 String inp = input.nextLine();
-                List<Integer[]> l = get_ind(inp, tree);
-                for(int j=0; j<l.size(); j++)
+
+                int ind = -1;
+                for(int j=0; j<inp.length(); j++)
                 {
-                    Integer[] m = l.get(j);
-                    System.out.println(m[0] + " " + m[1]);
+                    if(inp.charAt(j) == '*')
+                    {
+                        ind = j;
+                        break;
+                    }
+                }
+
+                if(ind != -1)
+                {
+                    if(ind == 0 && inp.length() == 1)
+                    {
+                        for(int j=0; j<text.length(); j++)
+                        {
+                            for(int k=0; k<text.length(); k++)
+                            {
+                                System.out.println(j + " " + k);
+                            }
+                        }
+                    }
+                    else if(ind == 0)
+                    {
+                        inp = inp.substring(1);
+                        List<Integer[]> l = get_ind(inp, tree);
+                        for(int j=0; j<l.size(); j++)
+                        {
+                            Integer[] m = l.get(j);
+                            for(int k=0; k<=m[0]; k++)
+                            {
+                                System.out.println(k + " " + m[1]);
+                            }
+                        }
+                    }
+                    else if(ind == inp.length()-1)
+                    {
+                        inp = inp.substring(0,inp.length()-1);
+                        List<Integer[]> l = get_ind(inp, tree);
+                        for(int j=0; j<l.size(); j++)
+                        {
+                            Integer[] m = l.get(j);
+                            for(int k=m[1]; k<text.length(); k++)
+                            {
+                                System.out.println(m[0] + " " + k);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        String s1, s2;
+                        s1 = inp.substring(0,ind);
+                        s2 = inp.substring(ind+1);
+                        List<Integer[]> l1 = get_ind(s1, tree);
+                        List<Integer[]> l2 = get_ind(s2, tree);
+                        for(int j=0; j<l1.size(); j++)
+                        {
+                            Integer[] m1 = l1.get(j);
+                            for(int k=0; k<l2.size(); k++)
+                            {
+                                Integer[] m2 = l2.get(k);
+                                if(m1[1] < m2[0])
+                                {
+                                    System.out.println(m1[0] + " " + m2[1]);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    List<Integer[]> l = get_ind(inp, tree);
+                    for(int j=0; j<l.size(); j++)
+                    {
+                        Integer[] m = l.get(j);
+                        System.out.println(m[0] + " " + m[1]);
+                    }
                 }
                 System.out.println("_________________________________________");
             }

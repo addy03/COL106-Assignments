@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cb20824-b49d-4e7b-896d-e2b314410e03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SuffixTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuffixTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SuffixTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuffixTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SuffixTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="171" column="33" lean-forward="true" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
+            <state relative-caret-position="342">
+              <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -234,8 +232,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SuffixTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="171" column="33" lean-forward="true" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
+        <state relative-caret-position="342">
+          <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
