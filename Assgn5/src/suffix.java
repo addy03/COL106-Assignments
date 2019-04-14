@@ -135,39 +135,6 @@ public class suffix
 //        System.out.println("===================");
     }
 
-//    public void get_all_ind(node a, String s)
-//    {
-//        listNode x = a.child.first;
-//        while(x != null)
-//        {
-//            if(s.charAt(0) == '?')
-//            {
-//                while(x != null)
-//                {
-//                    get_all_ind(x.elem, s.substring(1));
-//                    x = x.next;
-//                }
-//            }
-//            else
-//            {
-//                if(s.charAt(0) == x.elem.s.charAt(0))
-//                {
-//
-//                }
-//            }
-//            x = x.next;
-//        }
-//        System.out.println();
-//        System.out.println("--------");
-//
-//        x = a.child.first;
-//        while(x != null)
-//        {
-//            print_elem(x.elem);
-//            x = x.next;
-//        }
-//    }
-
     public void print_elem(node a)
     {
         listNode x = a.child.first;

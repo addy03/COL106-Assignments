@@ -152,28 +152,28 @@ public class SuffixTree
         try
         {
             Scanner input = new Scanner(new File("input.txt"));
-            FileWriter file = new FileWriter("out.txt");
-            BufferedWriter fileWriter = new BufferedWriter(file);
+//            FileWriter file = new FileWriter("out.txt");
+//            BufferedWriter fileWriter = new BufferedWriter(file);
 
             String text = input.nextLine();
             suffix tree = new suffix();
-            for(int i=0; i<text.length(); i++)
+            for(int i=0; i<text.length()-1; i++)
             {
 //                System.out.println("String added: " + text.substring(i));
                 tree.AddElement(text.substring(i), i);
             }
 
-            listNode x = tree.root.child.first;
-            while(x != null)
-            {
-                System.out.print(x.elem.s + " ");
-//                for(int i=0; i<x.elem.ind.size(); i++)
-//                {
-//                    System.out.print(x.elem.ind.get(i) + " ");
-//                }
-                System.out.println();
-                x = x.next;
-            }
+//            listNode x = tree.root.child.first;
+//            while(x != null)
+//            {
+//                System.out.print(x.elem.s + " ");
+////                for(int i=0; i<x.elem.ind.size(); i++)
+////                {
+////                    System.out.print(x.elem.ind.get(i) + " ");
+////                }
+//                System.out.println();
+//                x = x.next;
+//            }
 
 //            System.out.println();
             String s = input.nextLine();
@@ -200,9 +200,9 @@ public class SuffixTree
                         {
                             for(int k=0; k<text.length(); k++)
                             {
-                                fileWriter.write(j + " " + k);
+//                                fileWriter.write(j + " " + k);
                                 System.out.println((j + " " + k));
-                                fileWriter.newLine();
+//                                fileWriter.newLine();
                             }
                         }
                     }
@@ -216,9 +216,9 @@ public class SuffixTree
                             Integer[] m = l.get(j);
                             for(int k=0; k<=m[0]; k++)
                             {
-                                fileWriter.write(k + " " + m[1]);
+//                                fileWriter.write(k + " " + m[1]);
                                 System.out.println(k + " " + m[1]);
-                                fileWriter.newLine();
+//                                fileWriter.newLine();
                             }
                         }
                     }
@@ -240,9 +240,9 @@ public class SuffixTree
                             Integer[] m = l.get(j);
                             for(int k=m[1]; k<text.length(); k++)
                             {
-                                fileWriter.write(m[0] + " " + k);
+//                                fileWriter.write(m[0] + " " + k);
                                 System.out.println(m[0] + " " + k);
-                                fileWriter.newLine();
+//                                fileWriter.newLine();
                             }
                         }
                     }
@@ -263,9 +263,9 @@ public class SuffixTree
                                 Integer[] m2 = l2.get(k);
                                 if(m1[1] < m2[0])
                                 {
-                                    fileWriter.write(m1[0] + " " + m2[1]);
+//                                    fileWriter.write(m1[0] + " " + m2[1]);
                                     System.out.println(m1[0] + " " + m2[1]);
-                                    fileWriter.newLine();
+//                                    fileWriter.newLine();
                                 }
                             }
                         }
@@ -278,9 +278,9 @@ public class SuffixTree
                     for(int j=0; j<l.size(); j++)
                     {
                         Integer[] m = l.get(j);
-                        fileWriter.write(m[0] + " " + m[1]);
+//                        fileWriter.write(m[0] + " " + m[1]);
                         System.out.println(m[0] + " " + m[1]);
-                        fileWriter.newLine();
+//                        fileWriter.newLine();
                     }
                 }
             }
