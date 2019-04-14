@@ -42,10 +42,15 @@ public class SuffixTree
                     node_ind.add(0);
                     a = a.next;
                 }
-
                 for(int j=0; j<inp.length(); j++)
                 {
                     char x = inp.charAt(j);
+//                    System.out.println("Character: " + x);
+//                    System.out.println("Initial List:");
+//                    for(int n=0; n < node_list.size(); n++)
+//                    {
+//                        System.out.println(node_list.get(n).s + " " + node_ind.get(n));
+//                    }
                     if(x == '?')
                     {
                         int size = node_list.size();
@@ -75,7 +80,6 @@ public class SuffixTree
                         int size = node_list.size();
                         for(int n=0; n<size; n++)
                         {
-
                             if(node_list.get(n).s.length() > node_ind.get(n))
                             {
                                 if(node_list.get(n).s.charAt(node_ind.get(n)) == x)
@@ -93,9 +97,9 @@ public class SuffixTree
                             else
                             {
                                 node rep = node_list.remove(n);
+                                node_ind.remove(n);
                                 n = n-1;
                                 size = size - 1;
-                                int new_ind = node_list.size();
                                 listNode rep_child = rep.child.first;
                                 while(rep_child != null)
                                 {
@@ -103,22 +107,38 @@ public class SuffixTree
                                     node_ind.add(0);
                                     rep_child = rep_child.next;
                                 }
-                                for(int k=0; k<new_ind; k++)
+                                int new_ind = node_list.size();
+//                                System.out.println("List:");
+//                                for(int b=0; b < node_list.size(); b++)
+//                                {
+//                                    System.out.println(node_list.get(b).s + " " + node_ind.get(b));
+//                                }
+//                                System.out.println(n);
+//                                System.out.println(new_ind);
+                                for(int k=n+1; k<new_ind; k++)
                                 {
-                                    if(node_list.get(n).s.charAt(node_ind.get(n)) == x)
+                                    if(node_list.get(k).s.charAt(node_ind.get(k)) == x)
                                     {
-                                        node_ind.set(n, node_ind.get(n) + 1);
+                                        node_ind.set(k, node_ind.get(k) + 1);
                                     }
                                     else
                                     {
-                                        node_list.remove(n);
-                                        node_ind.remove(n);
+                                        node_list.remove(k);
+                                        node_ind.remove(k);
+                                        new_ind = new_ind - 1;
+                                        k = k-1;
                                     }
                                 }
                             }
 
                         }
                     }
+//                    System.out.println("Final List:");
+//                    for(int n=0; n < node_list.size(); n++)
+//                    {
+//                        System.out.println(node_list.get(n).s + " " + node_ind.get(n));
+//                    }
+//                    System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 }
 
                 for(int t=0; t<node_list.size(); t++)
@@ -126,7 +146,8 @@ public class SuffixTree
                     node x = node_list.get(t);
                     for(int p=0; p<x.ind.size(); p++)
                     {
-                        System.out.println(x.ind.get(p) - inp.length() + " " + x.ind.get(p));
+                        int val = x.ind.get(p) + node_ind.get(t) - 1;
+                        System.out.println((val - inp.length() + 1) + " " + val);
                     }
                 }
 
