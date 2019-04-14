@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cb20824-b49d-4e7b-896d-e2b314410e03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/SuffixTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuffixTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SuffixTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuffixTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/suffix.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/suffix.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/suffix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suffix.java" afterDir="false" />
     </list>
@@ -18,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SuffixTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="444">
+              <caret line="128" column="91" selection-start-line="128" selection-start-column="91" selection-end-line="128" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/suffix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="128" column="35" lean-forward="true" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
+            <state relative-caret-position="527">
+              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
               <folding>
                 <element signature="e#70#71#0" expanded="true" />
                 <element signature="e#106#107#0" expanded="true" />
@@ -46,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -64,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="357">
               <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="e#67#68#0" expanded="true" />
@@ -96,11 +100,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/home.java" />
         <option value="$PROJECT_DIR$/src/listNode.java" />
-        <option value="$PROJECT_DIR$/src/node.java" />
         <option value="$PROJECT_DIR$/src/suffixTree.java" />
-        <option value="$PROJECT_DIR$/src/SuffixTree.java" />
         <option value="$PROJECT_DIR$/src/MyList.java" />
+        <option value="$PROJECT_DIR$/src/node.java" />
         <option value="$PROJECT_DIR$/src/suffix.java" />
+        <option value="$PROJECT_DIR$/src/SuffixTree.java" />
       </list>
     </option>
   </component>
@@ -196,10 +200,14 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/node.java">
+    <entry file="file://$PROJECT_DIR$/src/MyList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="357">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#67#68#0" expanded="true" />
+            <element signature="e#95#96#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -210,34 +218,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyList.java">
+    <entry file="file://$PROJECT_DIR$/src/node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/suffix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
           <folding>
-            <element signature="e#67#68#0" expanded="true" />
-            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#70#71#0" expanded="true" />
+            <element signature="e#106#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SuffixTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="444">
+          <caret line="128" column="91" selection-start-line="128" selection-start-column="91" selection-end-line="128" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/suffix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="128" column="35" lean-forward="true" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
-          <folding>
-            <element signature="e#70#71#0" expanded="true" />
-            <element signature="e#106#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
