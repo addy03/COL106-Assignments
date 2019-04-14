@@ -1,7 +1,5 @@
-minimize
-5
-mini
-minimize
-min
-ini
-ize
+Minimize the windows
+3
+in
+ze??
+??

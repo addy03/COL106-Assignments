@@ -130,9 +130,9 @@ public class suffix
                 x.parent = f;
             }
         }
-        System.out.println("===================");
-        print_elem(root);
-        System.out.println("===================");
+//        System.out.println("===================");
+//        print_elem(root);
+//        System.out.println("===================");
     }
 
 //    public void get_all_ind(node a, String s)

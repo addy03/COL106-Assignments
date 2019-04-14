@@ -14,8 +14,8 @@ public class SuffixTree
             suffix tree = new suffix();
             for(int i=0; i<text.length(); i++)
             {
-                System.out.println("____________________");
-                System.out.println("String added: " + text.substring(i));
+//                System.out.println("____________________");
+//                System.out.println("String added: " + text.substring(i));
                 tree.AddElement(text.substring(i), i);
             }
 //                    System.out.println("===================");
@@ -23,7 +23,7 @@ public class SuffixTree
 //                    System.out.println("===================");
 //            tree.print_elem(tree.root);
 //
-
+            System.out.println();
             String s = input.nextLine();
             int cases = Integer.parseInt(s);
             for(int i=0; i<cases; i++)
@@ -63,13 +63,14 @@ public class SuffixTree
                             else
                             {
                                 node rep = node_list.remove(n);
+                                node_ind.remove(n);
                                 n = n - 1;
                                 size = size - 1;
                                 listNode rep_child = rep.child.first;
                                 while(rep_child != null)
                                 {
                                     node_list.add(rep_child.elem);
-                                    node_ind.add(0);
+                                    node_ind.add(1);
                                     rep_child = rep_child.next;
                                 }
                             }
@@ -141,6 +142,13 @@ public class SuffixTree
 //                    System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 }
 
+//                System.out.println("Final List:");
+//                for(int n=0; n < node_list.size(); n++)
+//                {
+//                    System.out.println(node_list.get(n).s + " " + node_ind.get(n));
+//                }
+//                System.out.println();
+
                 for(int t=0; t<node_list.size(); t++)
                 {
                     node x = node_list.get(t);
@@ -150,6 +158,7 @@ public class SuffixTree
                         System.out.println((val - inp.length() + 1) + " " + val);
                     }
                 }
+                System.out.println("_____________________________________________");
 
             }
         }
