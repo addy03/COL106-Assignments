@@ -151,7 +151,7 @@ public class SuffixTree
     {
         try
         {
-            Scanner input = new Scanner(new File("inp_big.txt"));
+            Scanner input = new Scanner(new File("input.txt"));
             FileWriter file = new FileWriter("out.txt");
             BufferedWriter fileWriter = new BufferedWriter(file);
 
@@ -159,10 +159,23 @@ public class SuffixTree
             suffix tree = new suffix();
             for(int i=0; i<text.length(); i++)
             {
+//                System.out.println("String added: " + text.substring(i));
                 tree.AddElement(text.substring(i), i);
             }
 
-            System.out.println();
+            listNode x = tree.root.child.first;
+            while(x != null)
+            {
+                System.out.print(x.elem.s + " ");
+//                for(int i=0; i<x.elem.ind.size(); i++)
+//                {
+//                    System.out.print(x.elem.ind.get(i) + " ");
+//                }
+                System.out.println();
+                x = x.next;
+            }
+
+//            System.out.println();
             String s = input.nextLine();
             int cases = Integer.parseInt(s);
             for(int i=0; i<cases; i++)
@@ -214,6 +227,14 @@ public class SuffixTree
                         inp = inp.substring(0,inp.length()-1);
                         List<Integer[]> l = get_ind(inp, tree);
                         l = sort_list(l);
+
+                        for(int j=0; i<l.size(); i++)
+                        {
+                            Integer[] m = l.get(j);
+                            System.out.println(m[0] + " " + m[1]);
+
+                        }
+
                         for(int j=0; j<l.size(); j++)
                         {
                             Integer[] m = l.get(j);

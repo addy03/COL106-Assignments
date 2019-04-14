@@ -70,10 +70,10 @@ public class suffix
                     f = a.elem;
                     flag = 1;
                 }
-                else if(a.elem.s.length() == pos+1)
+                else if(a.elem.s.length() == pos)
                 {
                     f = a.elem;
-                    f.ind.add(index);
+                    f.ind.add(index-1);
                     flag = 0;
                 }
                 else
