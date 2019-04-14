@@ -82,7 +82,7 @@ public class suffix
                     flag = 3;
                 }
             }
-            System.out.println(flag + " " + pos);
+//            System.out.println(flag + " " + pos);
 //            System.out.println(f.s + "   !!!!!!!!!!!!!!!!!!!!!!!");
             if(flag == 2)
             {
@@ -101,7 +101,7 @@ public class suffix
                 {
                     x = new node( "#", index);
                 }
-                System.out.println(f.s.length() + " " + f.s);
+//                System.out.println(f.s.length() + " " + f.s);
                 node x2;
                 if(f.s.substring(pos).length() > 0)
                 {

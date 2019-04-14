@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63e4ab1-72ab-4c77-baa9-95be05faafd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compress.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assgn4_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assgn4_2/src/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn4_2/src/out.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assgn5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assgn5/src/suffixTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/src/suffixTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn5/src/SuffixTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/src/SuffixTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn5/src/SuffixTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/src/SuffixTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn5/src/suffix.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/src/suffix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assgn5/src/suffix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assgn5/src/suffix.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Compress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="-1275">
+              <caret line="85" column="48" lean-forward="true" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1615" />
@@ -139,10 +136,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20067114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -172,6 +169,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/node2.java" />
     <entry file="file://$PROJECT_DIR$/src/Decompress.java" />
+    <entry file="file://$PROJECT_DIR$/src/Compress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="85" column="48" lean-forward="true" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -183,16 +190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Compress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -18,12 +18,6 @@ public class SuffixTree
         for(int j=0; j<inp.length(); j++)
         {
             char x = inp.charAt(j);
-//                    System.out.println("Character: " + x);
-//                    System.out.println("Initial List:");
-//                    for(int n=0; n < node_list.size(); n++)
-//                    {
-//                        System.out.println(node_list.get(n).s + " " + node_ind.get(n));
-//                    }
             if(x == '?')
             {
                 int size = node_list.size();
@@ -85,13 +79,6 @@ public class SuffixTree
                             rep_child = rep_child.next;
                         }
                         int new_ind = node_list.size();
-//                                System.out.println("List:");
-//                                for(int b=0; b < node_list.size(); b++)
-//                                {
-//                                    System.out.println(node_list.get(b).s + " " + node_ind.get(b));
-//                                }
-//                                System.out.println(n);
-//                                System.out.println(new_ind);
                         for(int k = (new_ind-count); k<new_ind; k++)
                         {
                             if(node_list.get(k).s.charAt(node_ind.get(k)) == x)
@@ -110,20 +97,7 @@ public class SuffixTree
 
                 }
             }
-//                    System.out.println("Final List:");
-//                    for(int n=0; n < node_list.size(); n++)
-//                    {
-//                        System.out.println(node_list.get(n).s + " " + node_ind.get(n));
-//                    }
-//                    System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
-
-//                System.out.println("Final List:");
-//                for(int n=0; n < node_list.size(); n++)
-//                {
-//                    System.out.println(node_list.get(n).s + " " + node_ind.get(n));
-//                }
-//                System.out.println();
 
         List<Integer[]> final_ind = new ArrayList<>();
 
@@ -141,24 +115,21 @@ public class SuffixTree
         return final_ind;
     }
 
-    public static void main(String args[])
+    public static void main(String args[]) throws IOException
     {
         try
         {
-            Scanner input = new Scanner(new File("input.txt"));
+            Scanner input = new Scanner(new File("inp_big.txt"));
+            FileWriter file = new FileWriter("out.txt");
+            BufferedWriter fileWriter = new BufferedWriter(file);
+
             String text = input.nextLine();
             suffix tree = new suffix();
             for(int i=0; i<text.length(); i++)
             {
-//                System.out.println("____________________");
-//                System.out.println("String added: " + text.substring(i));
                 tree.AddElement(text.substring(i), i);
             }
-//                    System.out.println("===================");
-//                    tree.print_elem(tree.root);
-//                    System.out.println("===================");
-//            tree.print_elem(tree.root);
-//
+
             System.out.println();
             String s = input.nextLine();
             int cases = Integer.parseInt(s);
@@ -184,7 +155,9 @@ public class SuffixTree
                         {
                             for(int k=0; k<text.length(); k++)
                             {
-                                System.out.println(j + " " + k);
+                                fileWriter.write(j + " " + k);
+                                System.out.println((j + " " + k));
+                                fileWriter.newLine();
                             }
                         }
                     }
@@ -197,7 +170,9 @@ public class SuffixTree
                             Integer[] m = l.get(j);
                             for(int k=0; k<=m[0]; k++)
                             {
+                                fileWriter.write(k + " " + m[1]);
                                 System.out.println(k + " " + m[1]);
+                                fileWriter.newLine();
                             }
                         }
                     }
@@ -210,7 +185,9 @@ public class SuffixTree
                             Integer[] m = l.get(j);
                             for(int k=m[1]; k<text.length(); k++)
                             {
+                                fileWriter.write(m[0] + " " + k);
                                 System.out.println(m[0] + " " + k);
+                                fileWriter.newLine();
                             }
                         }
                     }
@@ -229,7 +206,9 @@ public class SuffixTree
                                 Integer[] m2 = l2.get(k);
                                 if(m1[1] < m2[0])
                                 {
+                                    fileWriter.write(m1[0] + " " + m2[1]);
                                     System.out.println(m1[0] + " " + m2[1]);
+                                    fileWriter.newLine();
                                 }
                             }
                         }
@@ -241,10 +220,11 @@ public class SuffixTree
                     for(int j=0; j<l.size(); j++)
                     {
                         Integer[] m = l.get(j);
+                        fileWriter.write(m[0] + " " + m[1]);
                         System.out.println(m[0] + " " + m[1]);
+                        fileWriter.newLine();
                     }
                 }
-                System.out.println("_________________________________________");
             }
         }
         catch(FileNotFoundException e)
